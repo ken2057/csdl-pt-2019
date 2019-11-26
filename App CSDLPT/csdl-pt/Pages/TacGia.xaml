@@ -8,10 +8,74 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TacGia">
 
-    <Grid>
-        <StackPanel>
-            <Button Content="Quay lại" Name="btnBack" Click="btnBack_Click"/>
-            <Label Content="Tác giả"/>
-        </StackPanel>
+    <Grid Name="gridTacGia" KeyDown="gridTacGia_KeyDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label 
+            Grid.Row="0" Grid.Column="1" 
+            Content="Tên tác giả"
+            Margin="10px 0px"
+            VerticalContentAlignment="Bottom"/>
+        <TextBox 
+            Name="txtTenTacGia" 
+            Grid.Row="1" Grid.Column="1"
+            Margin="10px"/>
+        <Label 
+            Grid.Row="0" Grid.Column="2" 
+            Content="Ghi chú"
+            Margin="10px 0px"
+            VerticalContentAlignment="Bottom"/>
+        <TextBox 
+            Name="txtGhiChuTacGia" 
+            Grid.Row="1" Grid.Column="2" 
+            Margin="10px"/>
+
+        <Button 
+            Name="btnThemTaGia" Content="Thêm" 
+            Grid.Row="1" Grid.Column="3" 
+            Margin="10px" 
+            Click="btnThemTaGia_Click"/>
+        <Button 
+            Name="btnSuaTacGia" Content="Sửa" 
+            Grid.Row="1" Grid.Column="4" 
+            Margin="10px" 
+            Click="btnSuaTacGia_Click" IsEnabled="False"/>
+
+        <DataGrid Name="dtgTacGia" 
+                  Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="4" 
+                  AutoGenerateColumns="False" CanUserAddRows="False"
+                  MouseDoubleClick="dtgTacGia_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn 
+                    Width="1*" 
+                    Header="Tên tác giả" 
+                    Binding="{Binding ten_tacgia}" 
+                    IsReadOnly="True"/>
+                <DataGridTextColumn
+                    Width="1*" 
+                    Header="Ghi chú" 
+                    Binding="{Binding ghichu}" 
+                    IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button 
+            Grid.Column="0" Grid.Row="4" 
+            Content="Back" Name="btnBack"
+            Click="btnBack_Click"/>
     </Grid>
 </Page>

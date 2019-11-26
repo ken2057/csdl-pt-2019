@@ -32,5 +32,35 @@ namespace csdl_pt.Pages
             showOption pg = new showOption(connectionString);
             navService.Navigate(pg);
         }
+
+        private void dtgNhanVien_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void dtgNhanVien_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void cbQuyen_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void cbChiNhanh_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
