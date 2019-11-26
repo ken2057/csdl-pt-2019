@@ -3,5 +3,7 @@ echo Install DB qltv
 sqlcmd -i script/maychu.sql
 echo Add Data into QLMuaHang
 sqlcmd -i script/data.sql
+echo Add Duy sp
+sqlcmd -i script/duy/sp_maychu_duy.sql
 echo Done
 pause
