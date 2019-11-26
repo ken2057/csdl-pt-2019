@@ -17,10 +17,10 @@ as
 begin
 	
 	insert into DocGia values(@maSinhVien, @hoTen, @ngaySinh,@diaChi,@sDT)
-	insert into QLTV_TRAM_1.qltv.dbo.DocGia values (@maSinhVien, @hoTen, @ngaySinh,@diaChi,@sDT)
-	insert into QLTV_TRAM_2.qltv.dbo.DocGia values (@maSinhVien, @hoTen, @ngaySinh,@diaChi,@sDT)
-	insert into QLTV_TRAM_3.qltv.dbo.DocGia values (@maSinhVien, @hoTen, @ngaySinh,@diaChi,@sDT)
-	insert into QLTV_TRAM_4.qltv.dbo.DocGia values (@maSinhVien, @hoTen, @ngaySinh,@diaChi,@sDT)
+	-- insert into QLTV_TRAM_1.qltv.dbo.DocGia values (@maSinhVien, @hoTen, @ngaySinh,@diaChi,@sDT)
+	-- insert into QLTV_TRAM_2.qltv.dbo.DocGia values (@maSinhVien, @hoTen, @ngaySinh,@diaChi,@sDT)
+	-- insert into QLTV_TRAM_3.qltv.dbo.DocGia values (@maSinhVien, @hoTen, @ngaySinh,@diaChi,@sDT)
+	-- insert into QLTV_TRAM_4.qltv.dbo.DocGia values (@maSinhVien, @hoTen, @ngaySinh,@diaChi,@sDT)
 end
 
 go

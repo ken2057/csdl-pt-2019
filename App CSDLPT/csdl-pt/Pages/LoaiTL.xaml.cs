@@ -87,6 +87,7 @@ namespace csdl_pt.Pages
         private void resetValue()
         {
             btnSuaLoai.IsEnabled = false;
+            btnXoaLoai.IsEnabled = false;
             txtGhiChuLoai.Text = "";
             txtTenLoai.Text = "";
         }
@@ -182,13 +183,47 @@ namespace csdl_pt.Pages
             loai = listLoai[dtgLoaiTL.SelectedIndex];
             txtTenLoai.Text = loai.ten_loai; ;
             txtGhiChuLoai.Text = loai.ghichu;
+
             btnSuaLoai.IsEnabled = true;
+            btnXoaLoai.IsEnabled = true;
         }
 
         private void gridLoai_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
                 themLoai();
+        }
+
+        private void btnXoaLoai_Click(object sender, RoutedEventArgs e)
+        {
+            using (var conn = new SqlConnection(connectionString))
+            using (var command = new SqlCommand("sp_delete_loai", conn)
+            {
+                CommandType = CommandType.StoredProcedure
+            })
+            {
+                try
+                {
+                    conn.Open();
+                    // Add params nếu có
+                    command.Parameters.AddWithValue("@ma_loai", loai.ma_loai);
+
+                    var rdr = command.ExecuteNonQuery(); // Sử dụng khi không trả về dữ liệu
+                    //var rdr = command.ExecuteReader(); // Sử dụng khi có trả về dữ liệu
+
+                    resetValue();
+                    get_dsLoai();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }
         }
     }
 }

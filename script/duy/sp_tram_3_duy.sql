@@ -56,3 +56,22 @@ begin
 	insert into QLTV_TRAM_2.qltv.dbo.LoaiTaiLieu values (@ma, @tenLoai, @ghiChu)
 	insert into QLTV_TRAM_4.qltv.dbo.LoaiTaiLieu values (@ma, @tenLoai, @ghiChu)
 end
+go
+create proc sp_delete_loai
+	@ma_loai varchar(20)
+as
+begin
+	-- kiểm tra đang sử dụng
+	if exists (select * from QLTV_TRAM_1.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai)
+	begin
+		raiserror('Loại đang gắn vào Tài Liệu, không thể xoá', 16, 1)
+		return
+	end
+	--
+	delete LoaiTaiLieu where ma_loai = @ma_loai
+	--delete QLTV_MAY_CHU.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
+	--delete QLTV_TRAM_1.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
+	--delete QLTV_TRAM_2.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
+	--delete QLTV_TRAM_4.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
+end
+go
