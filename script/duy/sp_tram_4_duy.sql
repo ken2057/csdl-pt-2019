@@ -62,7 +62,7 @@ create proc sp_delete_loai
 as
 begin
 	-- kiểm tra đang sử dụng
-	if exists (select * from QLTV_TRAM_1.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai)
+	if exists (select * from QLTV_TRAM_2.qltv.dbo.TaiLieu where ma_loai = @ma_loai)
 	begin
 		raiserror('Loại đang gắn vào Tài Liệu, không thể xoá', 16, 1)
 		return
