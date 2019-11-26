@@ -27,15 +27,15 @@
             <Label Grid.Row="0" Grid.Column="1" Content="Mã nhân viên" ></Label>
             <TextBox Name="txtMaNhanVien" Grid.Row="1" Grid.Column="1" Margin="10px" IsEnabled="False"/>
             <Label Grid.Row="0" Grid.Column="2" Content="Quyền"></Label>
-            <ComboBox Name="cbQuyen" Grid.Row="1" Grid.Column="2" Margin="10px" SelectionChanged="cbQuyen_SelectionChanged">
-
+            <ComboBox Name="cbQuyen" Grid.Row="1" Grid.Column="2" Margin="10px">
+                
             </ComboBox>
             <Label Grid.Row="0" Grid.Column="3" Content="Chi nhánh"></Label>
-            <ComboBox Name="cbChiNhanh" Grid.Row="1" Grid.Column="3" Margin="10px" SelectionChanged="cbChiNhanh_SelectionChanged">
+            <ComboBox Name="cbChiNhanh" Grid.Row="1" Grid.Column="3" Margin="10px">
                 
             </ComboBox>
             <Label Grid.Row="0" Grid.Column="4" Content="Mật khẩu"></Label>
-            <PasswordBox Grid.Column="4" Grid.Row="1" Margin="10px"></PasswordBox>
+            <PasswordBox Name="txtMatKhau" Grid.Column="4" Grid.Row="1" Margin="10px"></PasswordBox>
             <Label Grid.Row="0" Grid.Column="5" Content="Số điện thoại"></Label>
             <TextBox x:Name="txtSDT" Grid.Row="1" Grid.Column="5" Margin="10px"></TextBox>
             <DataGrid x:Name="dtgNhanVien"
@@ -45,9 +45,8 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="1*" Header="Mã nhân viên" Binding="{Binding ma_nhanvien}" IsReadOnly="True"/>
                     <DataGridTextColumn Width="1*" Header="Quyền" Binding="{Binding quyen}" IsReadOnly="True"/>
-                    <DataGridTextColumn Width="1*" Header="Chi nhánh" Binding="{Binding ma_ChiNhanh}" IsReadOnly="True"/>
-                    <DataGridTextColumn Width="1*" Header="Mật khẩu" Binding="{Binding matkhau}" IsReadOnly="True"/>
-                    <DataGridTextColumn Width="1*" Header="Số điện thoại" Binding="{Binding sdt}" IsReadOnly="True"/>
+                <DataGridTextColumn Width="1*" Header="Chi nhánh" Binding="{Binding ma_ChiNhanh}" IsReadOnly="True"/>
+                <DataGridTextColumn Width="1*" Header="Số điện thoại" Binding="{Binding sdt}" IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Button Grid.Column="3" Grid.Row="4" Content="Add" Name="btnAdd" Click="btnAdd_Click"/>
