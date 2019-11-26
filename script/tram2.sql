@@ -7,6 +7,16 @@ create database qltv
 go
 use qltv
 go
+Create table [DocGia]
+(
+	[ma_sinhvien] Varchar(20) NOT NULL,
+	[hoten] Nvarchar(50) NULL,
+	[NgaySinh] Datetime NULL,
+	[diachi] Varchar(50) NULL,
+	[sdt] Varchar(15) NULL,
+Primary Key ([ma_sinhvien])
+) 
+go
 Create table [DangKy]
 (
 	[ma_tailieu] Varchar(20) NOT NULL,

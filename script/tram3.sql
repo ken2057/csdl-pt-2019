@@ -6,6 +6,23 @@ go
 create database qltv
 go
 use qltv
+goCreate table [LoaiTaiLieu]
+(
+	[ma_loai] Varchar(20) NOT NULL,
+	[ten_loai] Nvarchar(20) NULL,
+	[ghichu] Ntext NULL,
+Primary Key ([ma_loai])
+) 
+go
+Create table [DocGia]
+(
+	[ma_sinhvien] Varchar(20) NOT NULL,
+	[hoten] Nvarchar(50) NULL,
+	[NgaySinh] Datetime NULL,
+	[diachi] Varchar(50) NULL,
+	[sdt] Varchar(15) NULL,
+Primary Key ([ma_sinhvien])
+) 
 go
 Create table [DangKy]
 (
