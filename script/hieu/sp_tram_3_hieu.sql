@@ -30,8 +30,7 @@ as
 begin
 	--Tạo mã nhân viên 
 	declare @ma_nv varchar(20)
-	if exists (select * from NhanVien where ma_ChiNhanh = @ma_chinhanh and quyen = 'nhanvien') 
-		set @ma_nv =@quyen + cast((select count(*) from NhanVien where ma_ChiNhanh= 'TS' and quyen='nhanvien')+ 1 as varchar(20)) + @ma_chinhanh
+		set @ma_nv =@quyen + cast((select count(*) from NhanVien where quyen= @quyen)+ 1 as varchar(20)) + @ma_chinhanh
 	--Thêm nhân viên ở trạm 3
 		insert into NhanVien values (@ma_nv,@quyen,@ma_chinhanh,@matkhau,@sdt)
 	--Thêm nhân viên vào máy chủ
