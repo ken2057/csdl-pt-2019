@@ -123,6 +123,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\DialogResult.cs" />
     <Compile Include="Pages\DocGia.xaml.cs">
       <DependentUpon>DocGia.xaml</DependentUpon>
     </Compile>
