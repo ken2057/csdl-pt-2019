@@ -165,7 +165,7 @@ namespace csdl_pt.Pages
 
         private void dtgTacGia_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            tacGia = (EF.TacGia)dtgTacGia.SelectedItem;
+            tacGia = listTacGia[dtgTacGia.SelectedIndex];
             txtTenTacGia.Text = tacGia.ten_tacgia; ;
             txtGhiChuTacGia.Text = tacGia.ghichu;
             btnSuaTacGia.IsEnabled = true;
@@ -175,18 +175,11 @@ namespace csdl_pt.Pages
             btnSuaTacGia.IsEnabled = false;
             txtGhiChuTacGia.Text = "";
             txtTenTacGia.Text = "";
-            txtSearchTacGia.Text = "";
         }
 
         private void gridTacGia_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter) themTacGia();
-        }
-
-        private void txtSearchTacGia_KeyUp(object sender, KeyEventArgs e)
-        {
-            var filtered = listTacGia.Where(tacGia => tacGia.ten_tacgia.ToLower().Contains(txtSearchTacGia.Text));
-            dtgTacGia.ItemsSource = filtered;
         }
     }
 }

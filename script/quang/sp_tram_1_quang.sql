@@ -5,9 +5,9 @@ as
 begin
 	--TacGia chi co o may chu va tram 1
 	--search o tram 1
-	select * from TacGia order by ten_tacgia ASC
+	select * from TacGia
 	--search o may chu
-	--select * from QLTV_MAY_CHU.qltv.dbo.TacGia order by ten_tacgia ASC
+	--select * from QLTV_MAY_CHU.qltv.dbo.TacGia
 end
 go
 

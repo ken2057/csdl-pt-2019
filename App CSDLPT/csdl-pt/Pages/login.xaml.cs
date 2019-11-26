@@ -30,7 +30,7 @@ namespace csdl_pt.Pages
 
         private void _login()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["qltv"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["qltv2"].ConnectionString;
             connectionString += "User ID=" + txtUsername.Text + "; Password=" + txtPassword.Password;
 
             using (var conn = new SqlConnection(connectionString))
