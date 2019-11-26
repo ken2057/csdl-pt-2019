@@ -222,7 +222,7 @@ namespace csdl_pt.Pages
                 {
                     conn.Open();
                     // Add params nếu có
-                    command.Parameters.AddWithValue("@ma_nhanvien", txtMaNhanVien.Text);
+                    //command.Parameters.AddWithValue("@ma_nhanvien", txtMaNhanVien.Text);
                     command.Parameters.AddWithValue("@quyen", cbQuyen.Text);
                     command.Parameters.AddWithValue("@ma_ChiNhanh", cbChiNhanh.Text);
                     command.Parameters.AddWithValue("@matkhau", txtMatKhau.Password);
