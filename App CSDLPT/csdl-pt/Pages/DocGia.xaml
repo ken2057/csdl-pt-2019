@@ -65,6 +65,7 @@
         <Button Grid.Column="3" Grid.Row="4" Content="Add" Name="btnAdd" Click="btnAdd_Click"/>
         <Button Grid.Column="3" Grid.Row="4" Content="Add" Name="btnRefreshBeforeAdd" Click="btnRefreshBeforeAdd_Click"/>
         <Button Grid.Column="4" Grid.Row="4" Content="Update" Name="btnUpdate" Click="btnUpdate_Click" />
+        <Button Grid.Column="5" Grid.Row="4" Content="Update" Name="btnDelete" Click="btnDelete_Click" />
         <Button Grid.Column="0" Grid.Row="4" Content="Back" Name="btnBack" Click="btnBack_Click"/>
     </Grid>
 </Page>

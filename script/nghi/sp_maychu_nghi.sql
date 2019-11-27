@@ -38,11 +38,13 @@ begin
 		raiserror(N'Không tồn tại độc giả này',16,1)
 		return
 	end
-
-	update DocGia
-	set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
-	where ma_sinhvien = @maSinhVien
-
+	else
+	begin
+		update DocGia
+		set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
+		where ma_sinhvien = @maSinhVien
+		select * from DocGia where ma_sinhvien = @maSinhVien
+	end
 	--update QLTV_TRAM_1.qltv.dbo.DocGia
 	--set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
 	--where ma_sinhvien = @maSinhVien

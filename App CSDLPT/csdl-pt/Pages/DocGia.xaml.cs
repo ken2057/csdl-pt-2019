@@ -34,9 +34,9 @@ namespace csdl_pt.Pages
 
         private void Init()
         {
+            resetValue();
             get_DocGia();
             InitState();
-            
         }
 
         private void InitState()
@@ -78,12 +78,12 @@ namespace csdl_pt.Pages
                     }
 
                     dtgSinhVien.ItemsSource = listDocGia;
-                    dtgSinhVien.SelectedIndex = 0;
+                    //dtgSinhVien.SelectedIndex = 0;
                     dtgSinhVien.Items.Refresh();
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message, "Error");
+                    MessageBox.Show(e.Message, "Error get_docgia");
                 }
                 finally
                 {
@@ -106,6 +106,11 @@ namespace csdl_pt.Pages
         private void dtgSinhVien_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             InitState();
+            if (dtgSinhVien.SelectedIndex == -1)
+            {
+                resetValue();
+                return;
+            }
             docgia = listDocGia[dtgSinhVien.SelectedIndex];
             txtMaSinhVien.Text = docgia.ma_sinhvien;
             txtHoVaTen.Text = docgia.hoten;
@@ -117,11 +122,51 @@ namespace csdl_pt.Pages
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
             suaDocGia();
+            Init();
         }
 
         private void suaDocGia()
         {
-            throw new NotImplementedException();
+            using (var conn = new SqlConnection(connectionString))
+            using (var command = new SqlCommand("sp_update_docgia", conn)
+            {
+                CommandType = CommandType.StoredProcedure
+            })
+            {
+                try
+                {
+                    conn.Open();
+                    // Add params nếu có
+                    command.Parameters.AddWithValue("@maSinhVien", txtMaSinhVien.Text);
+                    command.Parameters.AddWithValue("@hoTen", txtHoVaTen.Text);
+                    command.Parameters.AddWithValue("@ngaySinh", dpNgaySinh.Text);
+                    command.Parameters.AddWithValue("@diaChi", txtDiaChi.Text);
+                    command.Parameters.AddWithValue("@sDT", txtSDT.Text);
+
+                    //var rdr = command.ExecuteNonQuery(); // Sử dụng khi không trả về dữ liệu
+                    var rdr = command.ExecuteReader(); // Sử dụng khi có trả về dữ liệu
+                    while (rdr.Read())
+                    {
+                        MessageBox.Show(
+                        rdr["ma_sinhvien"].ToString() + "\n" +
+                        rdr["hoten"].ToString() + "\n" +
+                        rdr["NgaySinh"].ToString() + "\n" +
+                        rdr["diachi"].ToString() + "\n" +
+                        rdr["sdt"].ToString()
+                        , "Sửa thành công đọc giả"
+                        );
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error sua_docgia");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -179,7 +224,7 @@ namespace csdl_pt.Pages
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Error");
+                    MessageBox.Show(ex.Message, "Error them_docgia");
                 }
                 finally
                 {
@@ -215,6 +260,11 @@ namespace csdl_pt.Pages
                     txtMaSinhVien.IsEnabled = false;
                     return;
             }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Lêu lêu");
         }
     }
 }
