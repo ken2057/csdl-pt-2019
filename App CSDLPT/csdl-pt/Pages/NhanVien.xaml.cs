@@ -175,12 +175,26 @@ namespace csdl_pt.Pages
 
         private void dtgNhanVien_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (txtMatKhau.Password == "")
-            {
-                MessageBox.Show("Hãy nhập mật khẩu");
-                txtMatKhau.Focus();
-                return;
-            }
+
+        }
+        private void dtgNhanVien_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            nv = listNhanVien[dtgNhanVien.SelectedIndex];
+            txtMaNhanVien.Text = nv.ma_nhanvien;
+            cbQuyen.SelectedValue = nv.quyen;
+            cbChiNhanh.SelectedValue = nv.ma_ChiNhanh;
+            txtMatKhau.Password = nv.ma_nhanvien;
+            txtSDT.Text = nv.sdt;
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            themNhanVien();
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+
             // add
             using (var conn = new SqlConnection(connectionString))
             using (var command = new SqlCommand("sp_update_nhanvien", conn)
@@ -192,6 +206,7 @@ namespace csdl_pt.Pages
                 {
                     conn.Open();
                     // Add params nếu có
+                    command.Parameters.AddWithValue("@ma_nv", txtMaNhanVien.Text);
                     command.Parameters.AddWithValue("@quyen", cbQuyen.Text);
                     command.Parameters.AddWithValue("@ma_chinhanh", cbChiNhanh.Text);
                     command.Parameters.AddWithValue("@matkhau", txtMatKhau.Password);
@@ -213,78 +228,52 @@ namespace csdl_pt.Pages
                 }
             }
         }
-        private void dtgNhanVien_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void themNhanVien()
         {
-            nv = listNhanVien[dtgNhanVien.SelectedIndex];
-            txtMaNhanVien.Text = nv.ma_nhanvien;
-            cbQuyen.SelectedValue = nv.quyen;
-            cbChiNhanh.SelectedValue = nv.ma_ChiNhanh;
-            txtMatKhau.Password = nv.ma_nhanvien;
-            txtSDT.Text = nv.sdt;
-        }
-
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            themNhanVien();
-        }
-
-        private void btnUpdate_Click(object sender, RoutedEventArgs e)
-        {
-            
-            }
-            private void themNhanVien()
+            if (txtMatKhau.Password == "")
             {
-                if (txtMatKhau.Password == "")
-                {
-                    MessageBox.Show("Hãy nhập mật khẩu");
-                    txtMatKhau.Focus();
-                    return;
-                }
-                if (txtSDT.Text == "")
-                {
-                    MessageBox.Show("Hãy nhập số điện thoại");
-                    txtSDT.Focus();
-                    return;
-                }
-                // add
-                using (var conn = new SqlConnection(connectionString))
-                using (var command = new SqlCommand("sp_add_nhanvien", conn)
-                {
-                    CommandType = CommandType.StoredProcedure
-                })
-                {
-                    try
-                    {
-                        conn.Open();
-                        // Add params nếu có
-                        //command.Parameters.AddWithValue("@ma_nhanvien", txtMaNhanVien.Text);
-                        command.Parameters.AddWithValue("@quyen", cbQuyen.Text);
-                        command.Parameters.AddWithValue("@ma_ChiNhanh", cbChiNhanh.Text);
-                        command.Parameters.AddWithValue("@matkhau", txtMatKhau.Password);
-                        command.Parameters.AddWithValue("@sdt", txtSDT.Text);
-
-                        var rdr = command.ExecuteNonQuery(); // Sử dụng khi không trả về dữ liệu
-                                                             //var rdr = command.ExecuteReader(); // Sử dụng khi có trả về dữ liệu
-
-                        resetValue();
-                        get_NhanVien();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Error");
-                    }
-                    finally
-                    {
-                        conn.Close();
-                    }
-
-                }
+                MessageBox.Show("Hãy nhập mật khẩu");
+                txtMatKhau.Focus();
+                return;
             }
-            private void resetValue()
+            // add
+            using (var conn = new SqlConnection(connectionString))
+            using (var command = new SqlCommand("sp_add_nhanvien", conn)
             {
-                btnUpdate.IsEnabled = false;
-                txtMatKhau.Password = "";
-                txtSDT.Text = "";
+                CommandType = CommandType.StoredProcedure
+            })
+            {
+                try
+                {
+                    conn.Open();
+                    // Add params nếu có
+                    command.Parameters.AddWithValue("@quyen", cbQuyen.Text);
+                    command.Parameters.AddWithValue("@ma_ChiNhanh", cbChiNhanh.Text);
+                    command.Parameters.AddWithValue("@matkhau", txtMatKhau.Password);
+                    command.Parameters.AddWithValue("@sdt", txtSDT.Text);
+
+                    var rdr = command.ExecuteNonQuery(); // Sử dụng khi không trả về dữ liệu
+                                                         //var rdr = command.ExecuteReader(); // Sử dụng khi có trả về dữ liệu
+
+                    resetValue();
+                    get_NhanVien();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
             }
+        }
+        private void resetValue()
+        {
+            btnUpdate.IsEnabled = false;
+            txtMatKhau.Password = "";
+            txtSDT.Text = "";
         }
     }
+}

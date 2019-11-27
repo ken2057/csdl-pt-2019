@@ -106,3 +106,40 @@ C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug
 C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.CopyComplete
 C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.exe
 C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.pdb
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\App.config
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\csdl-pt.exe.config
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\csdl-pt.exe
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\csdl-pt.pdb
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\EntityFramework.dll
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\EntityFramework.xml
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csprojAssemblyReference.cache
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\MainWindow.g.cs
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\DocGia.g.cs
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\LoaiTL.g.cs
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\login.g.cs
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\Muon.g.cs
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\NhanVien.g.cs
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\showOption.g.cs
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\TacGia.g.cs
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\TaiLieu.g.cs
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\App.g.cs
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt_MarkupCompile.cache
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt_MarkupCompile.lref
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\MainWindow.baml
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\DocGia.baml
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\LoaiTL.baml
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\login.baml
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\Muon.baml
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\NhanVien.baml
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\showOption.baml
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\TacGia.baml
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\TaiLieu.baml
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.g.resources
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl_pt.Properties.Resources.resources
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.GenerateResource.cache
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.CoreCompileInputs.cache
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.CopyComplete
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.exe
+C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.pdb

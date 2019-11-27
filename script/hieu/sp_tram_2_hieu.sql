@@ -62,26 +62,26 @@ begin
 		if (@quyen = 'nhanvien')
 		begin
 			update Nhanvien
-			set @ma_nv =@quyen + cast((select count(*) from NhanVien where quyen= @quyen)+ 1 as varchar(20)) + @ma_chinhanh,
-				@quyen = quyen, @ma_chinhanh =ma_chinhanh, @sdt = sdt, @matkhau = matkhau
+			set ma_nhanvien =@quyen + cast((select count(*) from NhanVien where quyen= @quyen)+ 1 as varchar(20)) + @ma_chinhanh,
+				quyen = @quyen, ma_chinhanh = @ma_chinhanh ,matkhau = @matkhau
 			where @ma_nv = ma_nhanvien 
 			
 			--update QLTV_MAY_CHU.qltv.dbo.NhanVien
-			--set @ma_nv =@quyen + @ma_chinhanh,
-			--	@quyen = quyen, @ma_chinhanh =ma_chinhanh, @sdt = sdt, @matkhau = matkhau
+			--set ma_nhanvien =@quyen + cast((select count(*) from NhanVien where quyen= @quyen)+ 1 as varchar(20)) + @ma_chinhanh,
+			--	quyen = @quyen, ma_chinhanh = @ma_chinhanh ,matkhau = @matkhau
 			--where @ma_nv = ma_nhanvien 
 		end
 		--cập nhật mã nếu quyền là thủ thư
 		if (@quyen = 'thuthu')
 		begin
 			update Nhanvien
-			set @ma_nv =@quyen + @ma_chinhanh,
-				@quyen = quyen, @ma_chinhanh =ma_chinhanh, @sdt = sdt, @matkhau = matkhau
+			set ma_nhanvien =@quyen + @ma_chinhanh,
+				quyen = @quyen, ma_chinhanh = @ma_chinhanh, sdt = @sdt, matkhau = @matkhau
 			where @ma_nv = ma_nhanvien 
 
 			--update QLTV_MAY_CHU.qltv.dbo.NhanVien
 			--set @ma_nv =@quyen + @ma_chinhanh,
-			--	@quyen = quyen, @ma_chinhanh =ma_chinhanh, @sdt = sdt, @matkhau = matkhau
+			--	quyen = @quyen, ma_chinhanh = @ma_chinhanh, sdt = @sdt, matkhau = @matkhau
 			--where @ma_nv = ma_nhanvien 
 		end
 end
@@ -94,7 +94,7 @@ as
 begin
 	declare @ma_nv varchar(20),
 			@quyen varchar(15)
-	select @ma_nv = ma
+	select @ma_nv = ma_nhanvien
 	from inserted
 	if exists ( select * from NhanVien where @quyen = 'thuthu')
 	raiserror('Đã tồn tại thủ ở trạm này',16,1)
