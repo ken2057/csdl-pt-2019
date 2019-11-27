@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\App.xaml
-9355832651
+10-391293475
 
-261954420906
+271471683005
 19-2017695888
-MainWindow.xaml;Pages\DocGia.xaml;Pages\LoaiTL.xaml;Pages\login.xaml;Pages\Muon.xaml;Pages\NhanVien.xaml;Pages\showOption.xaml;Pages\TacGia.xaml;Pages\TaiLieu.xaml;
+MainWindow.xaml;Pages\ChiTietTaiLieu.xaml;Pages\DocGia.xaml;Pages\LoaiTL.xaml;Pages\login.xaml;Pages\Muon.xaml;Pages\NhanVien.xaml;Pages\showOption.xaml;Pages\TacGia.xaml;Pages\TaiLieu.xaml;
 
 False
 

@@ -9,9 +9,39 @@
       Title="TaiLieu">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+        
+        
         <StackPanel>
             <Button Content="Quay lại" Name="btnBack" Click="btnBack_Click"/>
             <Label Content="Tài liệu"/>
         </StackPanel>
+        <DataGrid x:Name="dtgTaiLieu"
+                  Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="5"
+                  AutoGenerateColumns="False" CanUserAddRows="False"
+                  MouseDoubleClick="dtgTaiLieu_MouseDoubleClick"
+                  SelectionChanged="dtgTaiLieu_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="1*" Header="Tên tài liệu" Binding="{Binding ten_tailieu}" IsReadOnly="True"/>
+                <DataGridTextColumn Width="1*" Header="Tên tác giả" Binding="{Binding ma_tacgia_1}" IsReadOnly="True"/>
+                <DataGridTextColumn Width="1*" Header="Ngôn ngữ" Binding="{Binding ngonngu}" IsReadOnly="True"/>
+                <DataGridTextColumn Width="1*" Header="Số lượng" Binding="{Binding sl_kho}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

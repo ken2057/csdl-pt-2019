@@ -69,7 +69,6 @@ D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.Ge
 D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.CopyComplete
 D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.exe
 D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.pdb
-D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csprojAssemblyReference.cache
 C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\App.config
 C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\csdl-pt.exe.config
 C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\csdl-pt.exe
@@ -106,3 +105,6 @@ C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug
 C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.CopyComplete
 C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.exe
 C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.pdb
+D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csprojAssemblyReference.cache
+D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\ChiTietTaiLieu.g.cs
+D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\ChiTietTaiLieu.baml

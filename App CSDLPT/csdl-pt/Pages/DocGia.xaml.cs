@@ -261,10 +261,5 @@ namespace csdl_pt.Pages
                     return;
             }
         }
-
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Lêu lêu");
-        }
     }
 }
