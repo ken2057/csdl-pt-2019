@@ -70,3 +70,39 @@ D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.Co
 D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.exe
 D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.pdb
 D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csprojAssemblyReference.cache
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\App.config
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\csdl-pt.exe.config
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\csdl-pt.exe
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\csdl-pt.pdb
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\EntityFramework.dll
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\EntityFramework.xml
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csprojAssemblyReference.cache
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\MainWindow.g.cs
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\DocGia.g.cs
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\LoaiTL.g.cs
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\login.g.cs
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\Muon.g.cs
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\NhanVien.g.cs
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\showOption.g.cs
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\TacGia.g.cs
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\TaiLieu.g.cs
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\App.g.cs
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt_MarkupCompile.cache
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt_MarkupCompile.lref
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\MainWindow.baml
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\DocGia.baml
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\LoaiTL.baml
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\login.baml
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\Muon.baml
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\NhanVien.baml
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\showOption.baml
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\TacGia.baml
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\Pages\TaiLieu.baml
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.g.resources
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl_pt.Properties.Resources.resources
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.GenerateResource.cache
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.CopyComplete
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.exe
+C:\Users\npn19\Desktop\ĐỒ ÁN\jujjj\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.pdb
