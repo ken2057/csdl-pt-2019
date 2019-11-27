@@ -21,8 +21,9 @@
             <ColumnDefinition Width="0.2*"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition Width="0.2*"/>
         </Grid.ColumnDefinitions>
 
@@ -56,9 +57,29 @@
             Grid.Row="1" Grid.Column="4" 
             Margin="10px" 
             Click="btnSuaTacGia_Click" IsEnabled="False"/>
+        <Button
+            Name="btnXoaTacGia" Content="Xóa"
+            Grid.Column="5" Grid.Row="1"
+            Margin="10px"
+            Click="btnXoaTacGia_Click" IsEnabled="False"/>
+
+        <Label
+            Grid.Row="2" Grid.Column="3" 
+            Content="Search:"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Right"/>
+        <TextBox
+            Name="txtSearchTacGia"
+            Grid.Row="2" Grid.Column="4"
+            Grid.ColumnSpan="2"
+            VerticalContentAlignment="Center"
+            Margin="0px 0px 10px 0px"
+            KeyUp="txtSearchTacGia_KeyUp"/>
 
         <DataGrid Name="dtgTacGia" 
-                  Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="4" 
+                  Grid.Column="1" Grid.Row="3" 
+                  Grid.RowSpan="2" Grid.ColumnSpan="5" 
+                  Margin="10px 0px"
                   AutoGenerateColumns="False" CanUserAddRows="False"
                   MouseDoubleClick="dtgTacGia_MouseDoubleClick">
             <DataGrid.Columns>
@@ -79,15 +100,5 @@
             Grid.Column="0" Grid.Row="5" 
             Content="Back" Name="btnBack"
             Click="btnBack_Click"/>
-
-        <Label
-            Grid.Row="2" Grid.Column="3" 
-            Content="Search:"
-            VerticalContentAlignment="Center"
-            HorizontalContentAlignment="Right"/>
-        <TextBox
-            Name="txtSearchTacGia"
-            Grid.Row="2" Grid.Column="4"
-            KeyUp="txtSearchTacGia_KeyUp"/>
     </Grid>
 </Page>

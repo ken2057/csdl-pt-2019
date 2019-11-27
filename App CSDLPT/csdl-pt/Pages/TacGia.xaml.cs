@@ -169,10 +169,12 @@ namespace csdl_pt.Pages
             txtTenTacGia.Text = tacGia.ten_tacgia; ;
             txtGhiChuTacGia.Text = tacGia.ghichu;
             btnSuaTacGia.IsEnabled = true;
+            btnXoaTacGia.IsEnabled = true;
         }
         private void resetValue()
         {
             btnSuaTacGia.IsEnabled = false;
+            btnXoaTacGia.IsEnabled = false;
             txtGhiChuTacGia.Text = "";
             txtTenTacGia.Text = "";
             txtSearchTacGia.Text = "";
@@ -187,6 +189,43 @@ namespace csdl_pt.Pages
         {
             var filtered = listTacGia.Where(tacGia => tacGia.ten_tacgia.ToLower().Contains(txtSearchTacGia.Text));
             dtgTacGia.ItemsSource = filtered;
+        }
+
+        private void btnXoaTacGia_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Bạn có Chắc muốn xóa tác giả này không?", "My App", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    using(var conn = new SqlConnection(connectionString))
+                    using(var command = new SqlCommand("sp_xoa_tacgia", conn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    })
+                    {
+                        try
+                        {
+                            conn.Open();
+                            //Add params
+                            command.Parameters.AddWithValue("@ma", tacGia.ma_tacgia);
+
+                            var rdr = command.ExecuteNonQuery();
+                            resetValue();
+                            get_dsTacGia();
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Error");
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                    }
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
         }
     }
 }
