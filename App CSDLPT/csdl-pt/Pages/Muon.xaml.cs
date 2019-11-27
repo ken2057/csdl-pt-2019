@@ -33,5 +33,20 @@ namespace csdl_pt.Pages
             showOption pg = new showOption(connectionString);
             navService.Navigate(pg);
         }
+
+        private void DtgMuon_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void BtnAddMuon_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnUpdateMuon_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
