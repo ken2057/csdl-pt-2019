@@ -80,7 +80,7 @@ begin
 			where @ma_nv = ma_nhanvien 
 
 			--update QLTV_MAY_CHU.qltv.dbo.NhanVien
-			--set @ma_nv =@quyen + @ma_chinhanh,
+			--set ma_nhanvien =@quyen + @ma_chinhanh,
 			--	quyen = @quyen, ma_chinhanh = @ma_chinhanh, sdt = @sdt, matkhau = @matkhau
 			--where @ma_nv = ma_nhanvien 
 		end
