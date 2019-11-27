@@ -63,26 +63,26 @@ begin
 		if (@quyen = 'nhanvien')
 		begin
 			update Nhanvien
-			set @ma_nv =@quyen + cast((select count(*) from NhanVien where quyen= @quyen)+ 1 as varchar(20)) + @ma_chinhanh,
-				@quyen = quyen, @ma_chinhanh =ma_chinhanh, @sdt = sdt, @matkhau = matkhau
+			set ma_nhanvien =@quyen + cast((select count(*) from NhanVien where quyen= @quyen)+ 1 as varchar(20)) + @ma_chinhanh,
+				quyen = @quyen, ma_chinhanh = @ma_chinhanh, sdt = @sdt, matkhau = @matkhau
 			where @ma_nv = ma_nhanvien 
 
 			--update QLTV_MAY_CHU.qltv.dbo.NhanVien
-			--set @ma_nv =@quyen + @ma_chinhanh,
-			--	@quyen = quyen, @ma_chinhanh =ma_chinhanh, @sdt = sdt, @matkhau = matkhau
+			--set ma_nhanvien =@quyen + cast((select count(*) from NhanVien where quyen= @quyen)+ 1 as varchar(20)) + @ma_chinhanh,
+			--	quyen = @quyen, ma_chinhanh = @ma_chinhanh, sdt = @sdt, matkhau = @matkhau
 			--where @ma_nv = ma_nhanvien 
 		end
 		--cập nhật mã nếu quyền là thủ thư
 		if (@quyen = 'thuthu')
 		begin
 			update Nhanvien
-			set @ma_nv =@quyen + @ma_chinhanh,
-				@quyen = quyen, @ma_chinhanh =ma_chinhanh, @sdt = sdt, @matkhau = matkhau
+			set ma_nhanvien =@quyen + @ma_chinhanh,
+				quyen = @quyen, ma_chinhanh = @ma_chinhanh, sdt = @sdt, matkhau = @matkhau
 			where @ma_nv = ma_nhanvien 
 			
 			--update QLTV_MAY_CHU.qltv.dbo.NhanVien
-			--set @ma_nv =@quyen + @ma_chinhanh,
-			--	@quyen = quyen, @ma_chinhanh =ma_chinhanh, @sdt = sdt, @matkhau = matkhau
+			--set ma_nhanvien =@quyen + @ma_chinhanh,
+			--	quyen = @quyen, ma_chinhanh = @ma_chinhanh, sdt = @sdt, matkhau = @matkhau
 			--where @ma_nv = ma_nhanvien 
 		end
 end

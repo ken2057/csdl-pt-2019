@@ -68,7 +68,8 @@ as
 begin
 	select ten_tailieu, 
 		(select ten_tacgia from TacGia where TacGia.ma_tacgia = TaiLieu.ma_tacgia_1) as ten_tacgia, 
-		ngonngu ,sl_kho 
+		ngonngu ,sl_kho,
+		ma_tailieu
 	from TaiLieu
 end
 
@@ -87,8 +88,8 @@ begin
 		ma_tailieu,
 		ten_tailieu, 
 		(select ten_tacgia from TacGia where TacGia.ma_tacgia = TaiLieu.ma_tacgia_1) as ten_tacgia, 
-		(select ten_tacgia from TacGia where TacGia.ma_tacgia = TaiLieu.ma_tacgia_2) as ten_tacgia, 
-		(select ten_tacgia from TacGia where TacGia.ma_tacgia = TaiLieu.ma_tacgia_3) as ten_tacgia, 
+		(select ten_tacgia from TacGia where TacGia.ma_tacgia = TaiLieu.ma_tacgia_2) as ten_tacgia1, 
+		(select ten_tacgia from TacGia where TacGia.ma_tacgia = TaiLieu.ma_tacgia_3) as ten_tacgia2, 
 		ngonngu,
 		bia,
 		gia ,
