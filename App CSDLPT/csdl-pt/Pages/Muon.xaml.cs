@@ -38,15 +38,18 @@ namespace csdl_pt.Pages
         {
 
         }
-
-        private void BtnAddMuon_Click(object sender, RoutedEventArgs e)
+        private void BtnBack_Click_1(object sender, RoutedEventArgs e)
         {
-
+            NavigationService navService = NavigationService.GetNavigationService(this);
+            showOption pg = new showOption(connectionString);
+            navService.Navigate(pg);
         }
 
         private void BtnUpdateMuon_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService navService = NavigationService.GetNavigationService(this);
+            UpdateQuaTrinhMuon pg = new UpdateQuaTrinhMuon(connectionString);
+            navService.Navigate(pg);
         }
     }
 }

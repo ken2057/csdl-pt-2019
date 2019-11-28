@@ -526,7 +526,7 @@ insert into NhanVien values('nhanvien1svh', 'nhanvien','SVH','123',1303538473)
 insert into NhanVien values('nhanvien2svh', 'nhanvien','SVH','123',2398354903)
 insert into NhanVien values('nhanvien3svh', 'nhanvien','SVH','123',8608050483)
 go
-insert into NhanVien values('admin2','admin','HM','123',2775584190)
+insert into NhanVien values('admin1','admin','HM','123',2775584190)
 insert into NhanVien values('thuthuhm','thuthu','HM','E8BIcr',1708390712)
 insert into NhanVien values('nhanvien1hm','nhanvien','HM','DrwBM4KsZM8q',4646325571)
 insert into NhanVien values('nhanvien2hm','nhanvien','HM','6jh9p2q2',9351399471)
