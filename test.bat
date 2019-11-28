@@ -1,18 +1,9 @@
 @ECHO OFF
 setlocal enabledelayedexpansion
 
-rem cd script
-rem install all file in those folders
-rem for %%f in (duy, quang, hieu, nghi) do (
-rem 	echo --------------------------------------------------------------------
-rem 	echo <TAB> Install %%f script
-rem 	for /f "delims=" %%# in ('dir %%f /s /b') do (
-rem 		echo -
-rem 	    echo Install %%#
-rem 	    sqlcmd -i %%#
-rem 	)
-rem )
-rem echo --------------------------------------------------------------------
+rem -------------------------------
+rem Declare variables
+rem -------------------------------
 set "list=0 1 2 3 4"
 rem -------------------------------
 set script[0]=script/maychu.sql
@@ -46,57 +37,64 @@ for /f %%s in ('type server.config') do (
 	set server[!index!]=%%s
 	set /a index=!index!+1
 )
-echo -----------------------------------
-echo --- Install DB for each Server  ---
-echo -----------------------------------
+rem -------------------------------
+rem Get account login to SQL for all
+rem -------------------------------
+set account = ""
+set password = ""
+for /f %%s in ('type sqllogin.config') do (
+	set text=%%s
+	rem remove space
+	set text=!text: =!
+	rem set to varible
+	if "!account!"=="" (set account=!text!) else (if "!password!"=="" (set password=!text!))
+)
+echo ----------------------------------------
+echo ---  Install DB, SP for each Server  ---
+echo ----------------------------------------
 for %%i in (%list%) do (
-	echo -------------------------------
-	echo Install !script[%%i]! on !server[%%i]!
-	sqlcmd -S !server[%%i]! -i !script[%%i]! -U sa -P "<YourStrong@Passw0rd>"
+	echo --------------------
+	echo - Install !script[%%i]! on !server[%%i]!
+	rem Install db
+	sqlcmd -S !server[%%i]! -i !script[%%i]! -U !account! -P "!password!"
+	rem Install other
 )
 echo Done
-echo -----------------------------------
-echo ---       Add link server       ---
-echo -----------------------------------
+echo ----------------------------------------
+echo ---          Add link server         ---
+echo ----------------------------------------
 for %%i in (%list%) do (
 	echo -------------------------------
 	echo Current: !name[%%i]!
+	rem write into install.sql file and then execute it
+	echo use master > install.sql
 	for %%j in (%list%) do (
 		if NOT "%%i" == "%%j" (
-			echo -
-			echo Add: !name[%%j]!
-			echo EXEC master.dbo.sp_addlinkedserver @server=N'!name[%%j]!', @provider=N'SQLOLEDB', @datasrc=N'!server[%%j]!', @srvproduct='' | sqlcmd -S !server[%%i]! -U sa -P "<YourStrong@Passw0rd>" -e
-			echo Login: !name[%%j]!
-			echo EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'!name[%%j]!', @useself=N'False', @locallogin=NULL, @rmtuser=N'sa', @rmtpassword='^<YourStrong^@Passw0rd^>' > temp
-			type temp | sqlcmd -S !server[%%i]! -U sa -P "<YourStrong@Passw0rd>" -e
+			echo go >> install.sql
+			echo print 'Add !name[%%j]!' >> install.sql
+			echo go >> install.sql
+			echo EXEC master.dbo.sp_addlinkedserver @server=N'!name[%%j]!', @provider=N'SQLOLEDB', @datasrc=N'!server[%%j]!', @srvproduct='' >> install.sql
+			echo go >> install.sql
+			echo EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'!name[%%j]!', @useself=N'False', @locallogin=NULL, @rmtuser=N'sa', @rmtpassword='!password!' >> install.sql
+			echo go >> install.sql
 		)
 	)
+	sqlcmd -S !server[%%i]! -U !account! -P "!password!" -i install.sql
+	del install.sql
+	rem wait for not error handshake
+	TIMEOUT /T 3 /NOBREAK
 )
-del temp
-echo -----------------------------------
-echo ---    Add SP on each Server    ---
-echo -----------------------------------
-rem echo Install link server:
-rem 		for /f %%a in ('type server.config') do (
-rem 			for %%n in (QLTV_MAY_CHU QLTV_TRAM_1 QLTV_TRAM_2 QLTV_TRAM_3 QLTV_TRAM_4) do (
-rem 				echo EXEC master.dbo.sp_addlinkedserver @server=N'%%a', @provider=N'SQLOLEDB', @datasrc=N'%%i, 1433', @srvproduct='' | sqlcmd -S %%i -e
-				
-rem 			)
-rem 		)
+echo ----------------------------------------
+echo ---      Add SP on each Server       ---
+echo ----------------------------------------
+for %%i in (%list%) do (
+	echo --------------------
+	echo - Install SP on !server[%%i]!
+	for /f "delims=" %%s in ('dir script /b /s ^| findstr !sp[0]!') do (
+		echo -- Installing %%s
+		sqlcmd -S !server[%%i]! -i %%s -U !account! -P "!password!"
+	)
+)
 
-
-rem echo EXEC master.dbo.sp_addlinkedserver @server=N'QLTV_MAY_CHU', @provider=N'SQLOLEDB', @datasrc=N'192.168.43.223\WIN-MD7EJ65P9NA\SQLEXPRESS, 1433', @srvproduct='' | sqlcmd -e
 echo Done
 pause
-
-
-rem EXEC master.dbo.sp_addlinkedserver
-rem @server=N'QLTV_TRAM_1',
-rem @provider=N'SQLOLEDB',
-rem @datasrc=N'192.168.43.24\DESKTOP-NE6TTO8\SQLEXPRESS, 1433',
-rem @srvproduct=''
-
-rem echo EXEC master.dbo.sp_addlinkedserver @server=N'!name[%%j]!', @provider=N'SQLOLEDB', @datasrc=N'!server[%%j]!', @srvproduct='' | sqlcmd -S !server[%%i]! -U sa -P "<YourStrong@Passw0rd>" -e
-rem echo EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'QLTV_TRAM_1', @useself=N'False', @locallogin=NULL, @rmtuser=N'sa', @rmtpassword='<YourStrong@Passw0rd>' > temp
-rem type temp > 
-rem sqlcmd -S tcp:127.0.0.1,1433 -U sa -P "<YourStrong@Passw0rd>" -e
