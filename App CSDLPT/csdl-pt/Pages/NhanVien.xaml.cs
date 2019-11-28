@@ -179,7 +179,7 @@ namespace csdl_pt.Pages
         }
         private void dtgNhanVien_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            nv = listNhanVien[dtgNhanVien.SelectedIndex];
+            nv = (EF.NhanVien)dtgNhanVien.SelectedItem;
             txtMaNhanVien.Text = nv.ma_nhanvien;
             cbQuyen.SelectedValue = nv.quyen;
             cbChiNhanh.SelectedValue = nv.ma_ChiNhanh;

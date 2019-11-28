@@ -45,3 +45,14 @@ begin
 	--where ma_tacgia = @ma
 
 end
+go
+create proc sp_xoa_tacgia
+						@ma varchar(20)
+as
+begin
+	begin tran
+		--Delete from QLTV_MAY_CHU.qltv.dbo.TacGia where ma_tacgia = @ma
+		--Delete from QLTV_TRAM_1.qltv.dbo.TacGia where ma_tacgia = @ma
+	commit tran
+end
+go

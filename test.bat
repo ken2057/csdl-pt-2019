@@ -52,7 +52,7 @@ echo -----------------------------------
 for %%i in (%list%) do (
 	echo -------------------------------
 	echo Install !script[%%i]! on !server[%%i]!
-	sqlcmd -S !server[%%i]! -i !script[%%i]! -U sa -P "<YourStrong@Passw0rd>"
+	sqlcmd -S !server[%%i]! -i !script[%%i]! -U sa -P "123"
 )
 echo Done
 echo -----------------------------------
@@ -65,10 +65,10 @@ for %%i in (%list%) do (
 		if NOT "%%i" == "%%j" (
 			echo -
 			echo Add: !name[%%j]!
-			echo EXEC master.dbo.sp_addlinkedserver @server=N'!name[%%j]!', @provider=N'SQLOLEDB', @datasrc=N'!server[%%j]!', @srvproduct='' | sqlcmd -S !server[%%i]! -U sa -P "<YourStrong@Passw0rd>" -e
+			echo EXEC master.dbo.sp_addlinkedserver @server=N'!name[%%j]!', @provider=N'SQLOLEDB', @datasrc=N'!server[%%j]!', @srvproduct='' | sqlcmd -S !server[%%i]! -U sa -P "123" -e
 			echo Login: !name[%%j]!
-			echo EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'!name[%%j]!', @useself=N'False', @locallogin=NULL, @rmtuser=N'sa', @rmtpassword='^<YourStrong^@Passw0rd^>' > temp
-			type temp | sqlcmd -S !server[%%i]! -U sa -P "<YourStrong@Passw0rd>" -e
+			echo EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'!name[%%j]!', @useself=N'False', @locallogin=NULL, @rmtuser=N'sa', @rmtpassword='123' > temp
+			type temp | sqlcmd -S !server[%%i]! -U sa -P "123" -e
 		)
 	)
 )
@@ -96,7 +96,7 @@ rem @provider=N'SQLOLEDB',
 rem @datasrc=N'192.168.43.24\DESKTOP-NE6TTO8\SQLEXPRESS, 1433',
 rem @srvproduct=''
 
-rem echo EXEC master.dbo.sp_addlinkedserver @server=N'!name[%%j]!', @provider=N'SQLOLEDB', @datasrc=N'!server[%%j]!', @srvproduct='' | sqlcmd -S !server[%%i]! -U sa -P "<YourStrong@Passw0rd>" -e
-rem echo EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'QLTV_TRAM_1', @useself=N'False', @locallogin=NULL, @rmtuser=N'sa', @rmtpassword='<YourStrong@Passw0rd>' > temp
+rem echo EXEC master.dbo.sp_addlinkedserver @server=N'!name[%%j]!', @provider=N'SQLOLEDB', @datasrc=N'!server[%%j]!', @srvproduct='' | sqlcmd -S !server[%%i]! -U sa -P "123" -e
+rem echo EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'QLTV_TRAM_1', @useself=N'False', @locallogin=NULL, @rmtuser=N'sa', @rmtpassword='123' > temp
 rem type temp > 
-rem sqlcmd -S tcp:127.0.0.1,1433 -U sa -P "<YourStrong@Passw0rd>" -e
+rem sqlcmd -S tcp:127.0.0.1,1433 -U sa -P "123" -e
