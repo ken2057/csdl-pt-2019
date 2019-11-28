@@ -3,7 +3,11 @@ echo Install DB qltv
 sqlcmd -i script/maychu.sql
 echo Add Data into QLMuaHang
 sqlcmd -i script/data.sql
-echo Add Duy sp
-sqlcmd -i script/duy/sp_maychu_duy.sql
+echo Install SP
+for /f "delims=" %%s in ('dir script /b /s ^| findstr "sp_maychu"') do (
+	@echo:
+	echo - Installing: %%s
+	sqlcmd -i %%s
+)
 echo Done
 pause
