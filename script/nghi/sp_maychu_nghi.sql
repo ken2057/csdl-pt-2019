@@ -38,11 +38,13 @@ begin
 		raiserror(N'Không tồn tại độc giả này',16,1)
 		return
 	end
-
-	update DocGia
-	set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
-	where ma_sinhvien = @maSinhVien
-
+	else
+	begin
+		update DocGia
+		set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
+		where ma_sinhvien = @maSinhVien
+		select * from DocGia where ma_sinhvien = @maSinhVien
+	end
 	--update QLTV_TRAM_1.qltv.dbo.DocGia
 	--set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
 	--where ma_sinhvien = @maSinhVien
@@ -60,3 +62,42 @@ begin
 	--where ma_sinhvien = @maSinhVien
 end
 
+go
+create proc sp_get_dsTaiLieu
+as
+begin
+	select ten_tailieu, 
+		(select ten_tacgia from TacGia where TacGia.ma_tacgia = TaiLieu.ma_tacgia_1) as ten_tacgia, 
+		ngonngu ,sl_kho,
+		ma_tailieu
+	from TaiLieu
+end
+
+go
+
+create proc sp_get_tailieu
+						@maTaiLieu varchar(20)
+as
+begin
+	if not exists (select * from TaiLieu where ma_tailieu = @maTaiLieu)
+	begin
+		raiserror(N'Không tồn tại tài liệu này',16,1)
+		return
+	end
+	select  
+		ma_tailieu,
+		ten_tailieu, 
+		(select ten_tacgia from TacGia where TacGia.ma_tacgia = TaiLieu.ma_tacgia_1) as ten_tacgia, 
+		(select ten_tacgia from TacGia where TacGia.ma_tacgia = TaiLieu.ma_tacgia_2) as ten_tacgia1, 
+		(select ten_tacgia from TacGia where TacGia.ma_tacgia = TaiLieu.ma_tacgia_3) as ten_tacgia2, 
+		ngonngu,
+		bia,
+		gia ,
+		sl_kho,
+		(select ten_loai from LoaiTaiLieu where LoaiTaiLieu.ma_loai = TaiLieu.ma_loai) as ten_loai,
+		tinhtrang,
+		tomtat,
+		ngay_phathanh
+	from TaiLieu
+	where ma_tailieu = @maTaiLieu
+end
