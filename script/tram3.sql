@@ -6,22 +6,13 @@ go
 create database qltv
 go
 use qltv
-goCreate table [LoaiTaiLieu]
+go
+Create table [LoaiTaiLieu]
 (
 	[ma_loai] Varchar(20) NOT NULL,
 	[ten_loai] Nvarchar(20) NULL,
 	[ghichu] Ntext NULL,
 Primary Key ([ma_loai])
-) 
-go
-Create table [DocGia]
-(
-	[ma_sinhvien] Varchar(20) NOT NULL,
-	[hoten] Nvarchar(50) NULL,
-	[NgaySinh] Datetime NULL,
-	[diachi] Varchar(50) NULL,
-	[sdt] Varchar(15) NULL,
-Primary Key ([ma_sinhvien])
 ) 
 go
 Create table [DangKy]
@@ -62,7 +53,7 @@ Create table [DocGia]
 	[sdt] Varchar(15) NULL,
 Primary Key ([ma_sinhvien])
 ) 
-
+go
 Create table [Muon]
 (
 	[ma_tailieu] Varchar(20) NOT NULL,
@@ -166,68 +157,68 @@ exec sp_dropserver @server = 'QLTV_TRAM_3', @droplogins = 'droplogins'
 exec sp_dropserver @server = 'QLTV_TRAM_4', @droplogins = 'droplogins'
 go
 
-EXEC master.dbo.sp_addlinkedserver
-@server = N'QLTV_MAY_CHU',
-@provider = N'SQLOLEDB',
-@datasrc = N'192.168.43.223\WIN-MD7EJ65P9NA\SQLEXPRESS, 1433',
-@srvproduct = ''
-go
-EXEC master.dbo.sp_addlinkedserver
-@server = N'QLTV_TRAM_1',
-@provider = N'SQLOLEDB',
-@datasrc = N'192.168.43.24\DESKTOP-NE6TTO8\SQLEXPRESS, 1433',
-@srvproduct = ''
-go
-EXEC master.dbo.sp_addlinkedserver
-@server = N'QLTV_TRAM_2',
-@provider = N'SQLOLEDB',
-@datasrc = N'192.168.43.176\WIN-MD7EJ65P9NA\SQLEXPRESS, 1433',
-@srvproduct = ''
-go
---EXEC master.dbo.sp_addlinkedserver
---@server = N'QLTV_TRAM_3',
---@provider = N'SQLOLEDB',
---@datasrc = N'192.168.43.104\WIN-MD7EJ65P9NA\SQLEXPRESS, 1433',
---@srvproduct = ''
-go
-EXEC master.dbo.sp_addlinkedserver
-@server = N'QLTV_TRAM_4',
-@provider = N'SQLOLEDB',
-@datasrc = N'192.168.43.94\WIN-MD7EJ65P9NA\SQLEXPRESS, 1433',
-@srvproduct = ''
-go
--- conenct to server
-EXEC master.dbo.sp_addlinkedsrvlogin
-@rmtsrvname = N'QLTV_MAY_CHU',
-@useself = N'False',
-@locallogin = NULL,
-@rmtuser = N'duy',
-@rmtpassword = 'duy'
-go
-EXEC master.dbo.sp_addlinkedsrvlogin
-@rmtsrvname = N'QLTV_TRAM_1',
-@useself = N'False',
-@locallogin = NULL,
-@rmtuser = N'duy',
-@rmtpassword = 'duy'
-go
-EXEC master.dbo.sp_addlinkedsrvlogin
-@rmtsrvname = N'QLTV_TRAM_2',
-@useself = N'False',
-@locallogin = NULL,
-@rmtuser = N'duy',
-@rmtpassword = 'duy'
-go
---EXEC master.dbo.sp_addlinkedsrvlogin
---@rmtsrvname = N'QLTV_TRAM_3',
---@useself = N'False',
---@locallogin = NULL,
---@rmtuser = N'duy',
---@rmtpassword = 'duy'
-go
-EXEC master.dbo.sp_addlinkedsrvlogin
-@rmtsrvname = N'QLTV_TRAM_4',
-@useself = N'False',
-@locallogin = NULL,
-@rmtuser = N'duy',
-@rmtpassword = 'duy'
+-- EXEC master.dbo.sp_addlinkedserver
+-- @server = N'QLTV_MAY_CHU',
+-- @provider = N'SQLOLEDB',
+-- @datasrc = N'192.168.43.223\WIN-MD7EJ65P9NA\SQLEXPRESS, 1433',
+-- @srvproduct = ''
+-- go
+-- EXEC master.dbo.sp_addlinkedserver
+-- @server = N'QLTV_TRAM_1',
+-- @provider = N'SQLOLEDB',
+-- @datasrc = N'192.168.43.24\DESKTOP-NE6TTO8\SQLEXPRESS, 1433',
+-- @srvproduct = ''
+-- go
+-- EXEC master.dbo.sp_addlinkedserver
+-- @server = N'QLTV_TRAM_2',
+-- @provider = N'SQLOLEDB',
+-- @datasrc = N'192.168.43.176\WIN-MD7EJ65P9NA\SQLEXPRESS, 1433',
+-- @srvproduct = ''
+-- go
+-- --EXEC master.dbo.sp_addlinkedserver
+-- --@server = N'QLTV_TRAM_3',
+-- --@provider = N'SQLOLEDB',
+-- --@datasrc = N'192.168.43.104\WIN-MD7EJ65P9NA\SQLEXPRESS, 1433',
+-- --@srvproduct = ''
+-- go
+-- EXEC master.dbo.sp_addlinkedserver
+-- @server = N'QLTV_TRAM_4',
+-- @provider = N'SQLOLEDB',
+-- @datasrc = N'192.168.43.94\WIN-MD7EJ65P9NA\SQLEXPRESS, 1433',
+-- @srvproduct = ''
+-- go
+-- -- conenct to server
+-- EXEC master.dbo.sp_addlinkedsrvlogin
+-- @rmtsrvname = N'QLTV_MAY_CHU',
+-- @useself = N'False',
+-- @locallogin = NULL,
+-- @rmtuser = N'duy',
+-- @rmtpassword = 'duy'
+-- go
+-- EXEC master.dbo.sp_addlinkedsrvlogin
+-- @rmtsrvname = N'QLTV_TRAM_1',
+-- @useself = N'False',
+-- @locallogin = NULL,
+-- @rmtuser = N'duy',
+-- @rmtpassword = 'duy'
+-- go
+-- EXEC master.dbo.sp_addlinkedsrvlogin
+-- @rmtsrvname = N'QLTV_TRAM_2',
+-- @useself = N'False',
+-- @locallogin = NULL,
+-- @rmtuser = N'duy',
+-- @rmtpassword = 'duy'
+-- go
+-- --EXEC master.dbo.sp_addlinkedsrvlogin
+-- --@rmtsrvname = N'QLTV_TRAM_3',
+-- --@useself = N'False',
+-- --@locallogin = NULL,
+-- --@rmtuser = N'duy',
+-- --@rmtpassword = 'duy'
+-- go
+-- EXEC master.dbo.sp_addlinkedsrvlogin
+-- @rmtsrvname = N'QLTV_TRAM_4',
+-- @useself = N'False',
+-- @locallogin = NULL,
+-- @rmtuser = N'duy',
+-- @rmtpassword = 'duy'

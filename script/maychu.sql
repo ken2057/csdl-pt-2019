@@ -170,18 +170,18 @@ Alter table [TaiLieu] add  foreign key([ma_tacgia_3]) references [TacGia] ([ma_t
 go
 
 -- -- remove linkedservers if exist
--- exec sp_dropserver @server = 'QLTV_MAY_CHU', @droplogins = 'droplogins'
--- exec sp_dropserver @server = 'QLTV_TRAM_1', @droplogins = 'droplogins'
--- exec sp_dropserver @server = 'QLTV_TRAM_2', @droplogins = 'droplogins'
--- exec sp_dropserver @server = 'QLTV_TRAM_3', @droplogins = 'droplogins'
--- exec sp_dropserver @server = 'QLTV_TRAM_4', @droplogins = 'droplogins'
+exec sp_dropserver @server = 'QLTV_MAY_CHU', @droplogins = 'droplogins'
+exec sp_dropserver @server = 'QLTV_TRAM_1', @droplogins = 'droplogins'
+exec sp_dropserver @server = 'QLTV_TRAM_2', @droplogins = 'droplogins'
+exec sp_dropserver @server = 'QLTV_TRAM_3', @droplogins = 'droplogins'
+exec sp_dropserver @server = 'QLTV_TRAM_4', @droplogins = 'droplogins'
 -- go
 
--- --EXEC master.dbo.sp_addlinkedserver
--- --@server = N'QLTV_MAY_CHU',
--- --@provider = N'SQLOLEDB',
--- --@datasrc = N'192.168.43.223\WIN-MD7EJ65P9NA\SQLEXPRESS, 1433',
--- --@srvproduct = ''
+--EXEC master.dbo.sp_addlinkedserver
+--@server = N'QLTV_MAY_CHU',
+--@provider = N'SQLOLEDB',
+--@datasrc = N'192.168.43.223\WIN-MD7EJ65P9NA\SQLEXPRESS, 1433',
+--@srvproduct = ''
 -- go
 -- EXEC master.dbo.sp_addlinkedserver
 -- @server = N'QLTV_TRAM_1',
