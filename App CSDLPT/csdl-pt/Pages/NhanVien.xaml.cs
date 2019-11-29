@@ -185,6 +185,7 @@ namespace csdl_pt.Pages
             cbChiNhanh.SelectedValue = nv.ma_ChiNhanh;
             txtMatKhau.Password = nv.ma_nhanvien;
             txtSDT.Text = nv.sdt;
+            btnUpdate.IsEnabled = true;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
