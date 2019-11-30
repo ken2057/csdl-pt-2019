@@ -67,22 +67,21 @@ create proc sp_update_nhanvien
 			@sdt varchar(50)
 as
 begin
-		if (select quyen from NhanVien
+	if (select quyen from NhanVien
 				where ma_nhanvien in (select ORIGINAL_LOGIN())) = 'admin'
-		begin
-			if exists (select * from NhanVien where ma_nhanvien = @ma_nv)
-				begin
-					raiserror('Mã nhân viên này đã tồn tại',16,1)
-				return
-		end
-		begin
+	begin
+		if exists (select * from NhanVien where ma_nhanvien = @ma_nv)
+			begin
+				raiserror('Mã nhân viên này đã tồn tại',16,1)
+			return
+			end
 		if not exists (select * from NhanVien where @ma_nv = ma_nhanvien)
 			begin
 				raiserror ('Không tồn tại nhân viên này',16,1)
 			end
 		--Cập nhật nếu quyền là admin
 		if (@quyen = 'admin') 
-		begin
+			begin
 			--Cập nhật trạm 1
 			update NhanVien
 			set ma_nhanvien = @quyen + cast((select count(*) from NhanVien where @quyen= quyen )+ 1 as varchar(20)),quyen = @quyen, ma_chinhanh = @ma_chinhanh ,matkhau = @matkhau
@@ -92,10 +91,10 @@ begin
 			update QLTV_MAY_CHU.qltv.dbo.NhanVien
 			set ma_nhanvien = @quyen + cast((select count(*) from NhanVien where @quyen= quyen )+ 1 as varchar(20)),quyen = @quyen, ma_chinhanh = @ma_chinhanh ,matkhau = @matkhau
 			where @ma_nv = ma_nhanvien 
-		end
+			end
 		--cập nhật mã nếu quyền là nhân viên
 		if (@quyen = 'nhanvien')
-		begin
+			begin
 			--Cập nhật trạm 1
 			update Nhanvien
 			set ma_nhanvien = @quyen + cast((select count(*) from NhanVien where @quyen = quyen and @ma_chinhanh = ma_ChiNhanh)+ 1 as varchar(20)) + @ma_chinhanh,
@@ -106,10 +105,10 @@ begin
 			set ma_nhanvien = @quyen + cast((select count(*) from NhanVien where @quyen = quyen and @ma_chinhanh = ma_ChiNhanh)+ 1 as varchar(20)) + @ma_chinhanh,
 				quyen = @quyen, ma_chinhanh = @ma_chinhanh ,matkhau = @matkhau
 			where @ma_nv = ma_nhanvien  
-		end
+			end
 		--cập nhật mã nếu quyền là thủ thư
-		if (@quyen = 'thuthu')
-		begin
+			if (@quyen = 'thuthu')
+			begin
 			--Cập nhật trạm 1
 			update Nhanvien
 			set ma_nhanvien =@quyen + @ma_chinhanh,
@@ -120,8 +119,8 @@ begin
 			set ma_nhanvien =@quyen + @ma_chinhanh,
 			quyen = @quyen, ma_chinhanh = @ma_chinhanh ,matkhau = @matkhau
 			where @ma_nv = ma_nhanvien 
-		end
-		end
+			end
+	end
 	else
 	begin
 			raiserror('Bạn không thể thực hiện chức năng này',16,1)
