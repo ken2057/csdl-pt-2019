@@ -58,5 +58,12 @@ namespace csdl_pt.Pages
             Borrow pg = new Borrow(connectionString);
             navService.Navigate(pg);
         }
+
+        private void btnDangKy_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService navService = NavigationService.GetNavigationService(this);
+            DangKy pg = new DangKy(connectionString);
+            navService.Navigate(pg);
+        }
     }
 }

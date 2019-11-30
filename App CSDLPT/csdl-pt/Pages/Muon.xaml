@@ -55,5 +55,6 @@
         <Button Grid.Column="1" Grid.Row="5" Content="Back" Name="btnBack" Click="BtnBack_Click_1" Margin="5"/>
         <Button Grid.Column="11" Grid.Row="6" Content="Borrow" Name="btnMuon" Click="BtnMuon_Click" Margin="5"/>
         <Button Grid.Column="10" Grid.Row="5" Content="Update" Name="btnUpdateMuon" Click="BtnUpdateMuon_Click" Margin="5"/>
+        <Button Grid.Column="9" Grid.Row="5" Content="Đăng ký" Name="btnDangKy" Click="btnDangKy_Click" Margin="5"/>
     </Grid>
 </Page>
