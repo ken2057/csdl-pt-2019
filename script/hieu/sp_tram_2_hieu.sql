@@ -22,7 +22,7 @@ begin
 end
 
 go
-alter proc sp_add_nhanvien	
+create proc sp_add_nhanvien	
 			@quyen varchar(15),
 			@ma_chinhanh varchar(20),
 			@matkhau varchar(50),
