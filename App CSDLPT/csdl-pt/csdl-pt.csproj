@@ -93,7 +93,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Add_Update_Muon.xaml">
+    <Page Include="Pages\Add_Muon.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -145,13 +145,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\Update_Muon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AddDangKy.xaml.cs">
       <DependentUpon>AddDangKy.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Add_Update_Muon.xaml.cs">
-      <DependentUpon>Add_Update_Muon.xaml</DependentUpon>
+    <Compile Include="Pages\Add_Muon.xaml.cs">
+      <DependentUpon>Add_Muon.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Borrow.xaml.cs">
       <DependentUpon>Borrow.xaml</DependentUpon>
@@ -190,6 +194,9 @@
     </Compile>
     <Compile Include="Pages\UpdateQuaTrinhMuon.xaml.cs">
       <DependentUpon>UpdateQuaTrinhMuon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Update_Muon.xaml.cs">
+      <DependentUpon>Update_Muon.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

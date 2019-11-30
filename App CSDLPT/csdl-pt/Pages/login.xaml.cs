@@ -96,7 +96,7 @@ namespace csdl_pt.Pages
 
             // after finish, still not login => show error
             if (!isLogin)
-                MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ", 16, 1);
+                MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ", "Lỗi");
         }
 
         private void gridLogin_KeyDown(object sender, KeyEventArgs e)

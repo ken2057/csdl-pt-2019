@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\project\csdl-pt\App CSDLPT\csdl-pt\App.xaml
-152077760164
+16-1656838658
 
-33-326017179
+332097333603
 191035996303
-MainWindow.xaml;Pages\AddDangKy.xaml;Pages\Add_Update_Muon.xaml;Pages\Borrow.xaml;Pages\ChiTietTaiLieu.xaml;Pages\DangKy.xaml;Pages\DocGia.xaml;Pages\LoaiTL.xaml;Pages\login.xaml;Pages\Muon.xaml;Pages\NhanVien.xaml;Pages\showOption.xaml;Pages\TacGia.xaml;Pages\TaiLieu.xaml;Pages\UpdateQuaTrinhMuon.xaml;
+MainWindow.xaml;Pages\AddDangKy.xaml;Pages\Add_Muon.xaml;Pages\Borrow.xaml;Pages\ChiTietTaiLieu.xaml;Pages\DangKy.xaml;Pages\DocGia.xaml;Pages\LoaiTL.xaml;Pages\login.xaml;Pages\Muon.xaml;Pages\NhanVien.xaml;Pages\showOption.xaml;Pages\TacGia.xaml;Pages\TaiLieu.xaml;Pages\UpdateQuaTrinhMuon.xaml;Pages\Update_Muon.xaml;
 
-True
+False
 
