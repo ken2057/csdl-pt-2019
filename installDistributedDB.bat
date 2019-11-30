@@ -5,12 +5,20 @@ rem -------------------------------
 rem Declare variables
 rem -------------------------------
 set "list=0 1 2 3 4"
+set data=script/data/data_maychu.sql
+set transfer=script/transfer.sql
 rem -------------------------------
-set script[0]=script/maychu.sql
-set script[1]=script/tram1.sql
-set script[2]=script/tram2.sql
-set script[3]=script/tram3.sql
-set script[4]=script/tram4.sql
+set db[0]=script/db/db_maychu.sql
+set db[1]=script/db/db_tram_1.sql
+set db[2]=script/db/db_tram_2.sql
+set db[3]=script/db/db_tram_3.sql
+set db[4]=script/db/db_tram_4.sql
+rem -------------------------------
+set user[0]=script/user/user_maychu.sql
+set user[1]=script/user/user_tram_1.sql
+set user[2]=script/user/user_tram_2.sql
+set user[3]=script/user/user_tram_3.sql
+set user[4]=script/user/user_tram_4.sql
 rem -------------------------------
 set sp[0]=sp_maychu
 set sp[1]=sp_tram_1
@@ -34,8 +42,10 @@ rem Get all Server into array
 rem -------------------------------
 set index=0
 for /f %%s in ('type server.config') do (
-	set server[!index!]=%%s
-	set /a index=!index!+1
+	if !index! LEQ 4 (
+		set server[!index!]=%%s
+		set /a index=!index!+1
+	)
 )
 rem -------------------------------
 rem Get account login to SQL for all
@@ -54,12 +64,12 @@ echo ---  Install DB, SP for each Server  ---
 echo ----------------------------------------
 for %%i in (%list%) do (
 	echo --------------------
-	echo - Install !script[%%i]! on !server[%%i]!
+	echo - Install !db[%%i]! on !server[%%i]!
 	rem Install db
-	sqlcmd -S !server[%%i]! -i !script[%%i]! -U !account! -P "!password!"
+	sqlcmd -S !server[%%i]! -i !db[%%i]! -U !account! -P "!password!"
 	rem Install other
 )
-echo Done
+TIMEOUT /T 3 /NOBREAK
 echo ----------------------------------------
 echo ---          Add link server         ---
 echo ----------------------------------------
@@ -85,16 +95,33 @@ for %%i in (%list%) do (
 	TIMEOUT /T 3 /NOBREAK
 )
 echo ----------------------------------------
+echo ---     Add login on each Server     ---
+echo ----------------------------------------
+for %%i in (%list%) do (
+	echo --------------------
+	echo - Install login/user on !server[%%i]! from !user[%%i]!
+	sqlcmd -S !server[%%i]! -U !account! -P "!password!" -i !user[%%i]!
+)
+TIMEOUT /T 3 /NOBREAK
+echo ----------------------------------------
 echo ---      Add SP on each Server       ---
 echo ----------------------------------------
 for %%i in (%list%) do (
 	echo --------------------
 	echo - Install SP on !server[%%i]!
-	for /f "delims=" %%s in ('dir script /b /s ^| findstr !sp[0]!') do (
+	for /f "delims=" %%s in ('dir script /b /s ^| findstr !sp[%%i]!') do (
 		echo -- Installing %%s
 		sqlcmd -S !server[%%i]! -i %%s -U !account! -P "!password!"
 	)
 )
-
+TIMEOUT /T 3 /NOBREAK
+echo ----------------------------------------
+echo ---             Add data             ---
+echo ----------------------------------------
+echo Add data to MayChu from !data!
+sqlcmd -i !data!
+echo Add data to Tram from !transfer!
+sqlcmd -i !transfer!
+echo ----------------------------------------
 echo Done
 pause

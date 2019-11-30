@@ -33,8 +33,10 @@ rem --------------------------------------------------------
 rem Get Hostname in file
 set index=0
 for /f %%s in ('type server.config') do (
-	set server[!index!]=%%s
-	set /a index=!index!+1
+	if !index! LEQ 4 (
+		set server[!index!]=%%s
+		set /a index=!index!+1
+	)
 )
 rem --------------------------------------------------------
 @echo:

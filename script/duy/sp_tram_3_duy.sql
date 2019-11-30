@@ -69,9 +69,9 @@ begin
 	end
 	--
 	delete LoaiTaiLieu where ma_loai = @ma_loai
-	--delete QLTV_MAY_CHU.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
-	--delete QLTV_TRAM_1.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
-	--delete QLTV_TRAM_2.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
-	--delete QLTV_TRAM_4.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
+	delete QLTV_MAY_CHU.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
+	delete QLTV_TRAM_1.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
+	delete QLTV_TRAM_2.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
+	delete QLTV_TRAM_4.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
 end
 go

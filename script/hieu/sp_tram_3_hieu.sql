@@ -69,6 +69,11 @@ begin
 		if (select quyen from NhanVien
 				where ma_nhanvien in (select ORIGINAL_LOGIN())) = 'admin'
 		begin
+		if exists (select * from NhanVien where ma_nhanvien = @ma_nv)
+				begin
+					raiserror('Mã nhân viên này đã tồn tại',16,1)
+				return
+			end
 		if not exists (select * from NhanVien where @ma_nv = ma_nhanvien)
 			begin
 				raiserror ('Không tồn tại nhân viên này',16,1)
