@@ -3,11 +3,11 @@ go
 create proc sp_get_dsTacGia
 as
 begin
-	--TacGia chi co o may chu va tram 1
-	--search o may chu
 	select * from TacGia order by ten_tacgia ASC
-	--search o tram 1
 	--select * from QLTV_TRAM_1.qltv.dbo.TacGia order by ten_tacgia ASC
+	--select * from QLTV_TRAM_2.qltv.dbo.TacGia order by ten_tacgia ASC
+	--select * from QLTV_TRAM_3.qltv.dbo.TacGia order by ten_tacgia ASC
+	--select * from QLTV_TRAM_4.qltv.dbo.TacGia order by ten_tacgia ASC
 end
 go
 
@@ -26,6 +26,9 @@ begin
 	begin tran
 		insert into TacGia values(@ma, @tentacgia, @ghichu)
 		--insert into QLTV_TRAM_1.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
+		--insert into QLTV_TRAM_2.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
+		--insert into QLTV_TRAM_3.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
+		--insert into QLTV_TRAM_4.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
 	commit tran
 end
 go
@@ -50,6 +53,18 @@ begin
 		--update QLTV_TRAM_1.qltv.dbo.TacGia
 		--set ten_tacgia = @ten, ghichu = @ghichu
 		--where ma_tacgia = @ma
+
+		--update QLTV_TRAM_2.qltv.dbo.TacGia
+		--set ten_tacgia = @ten, ghichu = @ghichu
+		--where ma_tacgia = @ma
+
+		--update QLTV_TRAM_3.qltv.dbo.TacGia
+		--set ten_tacgia = @ten, ghichu = @ghichu
+		--where ma_tacgia = @ma
+
+		--update QLTV_TRAM_4.qltv.dbo.TacGia
+		--set ten_tacgia = @ten, ghichu = @ghichu
+		--where ma_tacgia = @ma
 	commit tran
 end
 go
@@ -66,6 +81,9 @@ begin
 	begin tran
 		Delete from TacGia where ma_tacgia = @ma
 		--Delete from QLTV_TRAM_1.qltv.dbo.TacGia where ma_tacgia = @ma
+		--Delete from QLTV_TRAM_2.qltv.dbo.TacGia where ma_tacgia = @ma
+		--Delete from QLTV_TRAM_3.qltv.dbo.TacGia where ma_tacgia = @ma
+		--Delete from QLTV_TRAM_4.qltv.dbo.TacGia where ma_tacgia = @ma
 	commit tran
 end
 go
@@ -73,7 +91,13 @@ go
 create proc sp_get_dsDangKy
 as
 begin
-	select * from DangKy order by ngaygio_dk ASC
+	select ngaygio_dk, hoten, ten_tailieu, ghichu, dk.ma_sinhvien, dk.ma_tailieu
+	from DangKy as dk 
+		inner join (select hoten, ma_sinhvien 
+					from DocGia) as dg on dk.ma_sinhvien = dg.ma_sinhvien
+		inner join (select ten_tailieu, ma_tailieu 
+					from TaiLieu) as tl on dk.ma_tailieu = tl.ma_tailieu
+	order by ngaygio_dk ASC
 end
 go
 create proc sp_add_DangKy

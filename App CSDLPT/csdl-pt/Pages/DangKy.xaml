@@ -110,12 +110,12 @@
                     IsReadOnly="True"/>
                 <DataGridTextColumn 
                     Width="1*" 
-                    Header="Tên độc giả" 
+                    Header="Mã độc giả" 
                     Binding="{Binding ma_sinhvien}" 
                     IsReadOnly="True"/>
                 <DataGridTextColumn 
                     Width="1*" 
-                    Header="Tên tài liệu" 
+                    Header="Mã tài liệu" 
                     Binding="{Binding ma_tailieu}" 
                     IsReadOnly="True"/>
                 <DataGridTextColumn
@@ -123,6 +123,14 @@
                     Header="Ghi chú" 
                     Binding="{Binding ghichu}" 
                     IsReadOnly="True"/>
+                <!--<DataGridTextColumn
+                    Header="Mã sinh viên"
+                    Binding="{Binding ma_sinhvien}"
+                    IsReadOnly="True"/>
+                <DataGridTextColumn
+                    Header="Mã tài liệu"
+                    Binding="{Binding ma_tailieu}"
+                    IsReadOnly="True"/>-->
             </DataGrid.Columns>
         </DataGrid>
         <Button 
