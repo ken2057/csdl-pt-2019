@@ -1,0 +1,123 @@
+﻿<Page x:Class="csdl_pt.Pages.AddDangKy"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:csdl_pt.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddDangKy">
+
+    <Grid Name="gridAddDangKy">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.15*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.15*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+
+        <Label
+            Content="Tài liệu"
+            Grid.Row="0" Grid.Column="1"
+            VerticalContentAlignment="Bottom"
+            Margin="5px 0px"/>
+        <TextBox
+            Name="txtSearchTaiLieu"
+            Grid.Row="1" Grid.Column="1"
+            VerticalContentAlignment="Center"
+            Margin="5px 0px"
+            KeyUp="txtSearchTaiLieu_KeyUp"/>
+
+        <Label
+            Content="Độc giả"
+            Grid.Row="0" Grid.Column="2"
+            VerticalContentAlignment="Bottom"
+            Margin="5px 0px"/>
+        <TextBox
+            Name="txtSearchDocGia"
+            Grid.Row="1" Grid.Column="2"
+            VerticalContentAlignment="Center"
+            Margin="5px 0px"
+            KeyUp="txtSearchDocGia_KeyUp"/>
+
+        <Label
+            Content="Ghi Chú"
+            Grid.Row="0" Grid.Column="3"
+            VerticalContentAlignment="Bottom"
+            Margin="5px 0px"/>
+        <TextBox
+            Name="txtGhiChu"
+            Grid.Row="1" Grid.Column="3"
+            VerticalContentAlignment="Center"
+            Margin="5px 0px"
+            MaxLength="50"/>
+
+        <DataGrid
+            Name="dtgTaiLieu"
+            Grid.Column="1" Grid.Row="2"
+            Margin="5px 0px"
+            AutoGenerateColumns="False" CanUserAddRows="False"
+            MouseDoubleClick="dtgTaiLieu_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="1*" 
+                    Header="Tên tài liệu" 
+                    Binding="{Binding ten_tailieu}" 
+                    IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid
+            Name="dtgDocGia"
+            Grid.Column="2" Grid.Row="2"
+            Margin="5px 0px"
+            AutoGenerateColumns="False" CanUserAddRows="False"
+            MouseDoubleClick="dtgDocGia_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="1*" 
+                    Header="Tên độc giả" 
+                    Binding="{Binding hoten}" 
+                    IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid 
+            Name="gridFunction"
+            Grid.Row="2" Grid.Column="3"
+            Margin="5px 0px">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Label 
+                    Content="Ngày giờ:"
+                    VerticalContentAlignment="Center"/>
+                <TextBlock 
+                    Name="txtNgayGio"
+                    VerticalAlignment="Center"/>
+            </StackPanel>
+            <Button
+                Name="btnThemDangKy"
+                Content="Thêm"
+                Grid.Row="2"
+                Click="btnThemDangKy_Click"/>
+            <Button
+                Name="btnBack"
+                Content="Hủy"
+                Grid.Row="4"
+                Click="btnBack_Click"/>
+        </Grid>
+    </Grid>
+</Page>
