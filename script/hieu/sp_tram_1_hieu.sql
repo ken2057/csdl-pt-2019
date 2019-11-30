@@ -38,7 +38,7 @@ begin
 	declare @ma_nv varchar(20)
 		if (@quyen = 'admin') 
 		begin
-			set @ma_nv = @quyen + cast((select count(*) from NhanVien where quyen= @quyen  and @ma_chinhanh = ma_ChiNhanh)+ 1 as varchar(20))
+			set @ma_nv = @quyen + cast((select count(*) from NhanVien where quyen= @quyen)+ 1 as varchar(20))
 		end
 		if (@quyen = 'nhanvien')
 		begin
