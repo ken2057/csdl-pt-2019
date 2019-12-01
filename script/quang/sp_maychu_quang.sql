@@ -4,10 +4,6 @@ create proc sp_get_dsTacGia
 as
 begin
 	select * from TacGia order by ten_tacgia ASC
-	--select * from QLTV_TRAM_1.qltv.dbo.TacGia order by ten_tacgia ASC
-	--select * from QLTV_TRAM_2.qltv.dbo.TacGia order by ten_tacgia ASC
-	--select * from QLTV_TRAM_3.qltv.dbo.TacGia order by ten_tacgia ASC
-	--select * from QLTV_TRAM_4.qltv.dbo.TacGia order by ten_tacgia ASC
 end
 go
 
@@ -23,13 +19,13 @@ begin
 		raiserror('Không tồn tại tác giả này',16,1)
 		return
 	end
-	begin tran
+	
 		insert into TacGia values(@ma, @tentacgia, @ghichu)
 		--insert into QLTV_TRAM_1.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
 		--insert into QLTV_TRAM_2.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
 		--insert into QLTV_TRAM_3.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
 		--insert into QLTV_TRAM_4.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
-	commit tran
+	
 end
 go
 
@@ -45,7 +41,7 @@ begin
 		return
 	end
 
-	begin tran
+	
 		update TacGia
 		set ten_tacgia = @ten, ghichu = @ghichu
 		where ma_tacgia = @ma
@@ -65,7 +61,7 @@ begin
 		--update QLTV_TRAM_4.qltv.dbo.TacGia
 		--set ten_tacgia = @ten, ghichu = @ghichu
 		--where ma_tacgia = @ma
-	commit tran
+	
 end
 go
 
@@ -78,13 +74,13 @@ begin
 		raiserror('Không tồn tại tác giả này',16,1)
 		return
 	end
-	begin tran
+	
 		Delete from TacGia where ma_tacgia = @ma
 		--Delete from QLTV_TRAM_1.qltv.dbo.TacGia where ma_tacgia = @ma
 		--Delete from QLTV_TRAM_2.qltv.dbo.TacGia where ma_tacgia = @ma
 		--Delete from QLTV_TRAM_3.qltv.dbo.TacGia where ma_tacgia = @ma
 		--Delete from QLTV_TRAM_4.qltv.dbo.TacGia where ma_tacgia = @ma
-	commit tran
+	
 end
 go
 --Dang Ky
@@ -122,9 +118,13 @@ begin
 		raiserror('Độc giả đã đăng ký tài liệu này rồi', 16, 1)
 		return
 	end
-	begin tran
+	
 		insert into DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
-	commit tran
+		--insert into QLTV_TRAM_1.qltv.dbo.DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
+		--insert into QLTV_TRAM_2.qltv.dbo.DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
+		--insert into QLTV_TRAM_3.qltv.dbo.DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
+		--insert into QLTV_TRAM_4.qltv.dbo.DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
+	
 end
 go
 create proc sp_xoa_dangky
@@ -137,8 +137,12 @@ begin
 		raiserror('Đăng ký này không tồn tại', 16, 1)
 		return
 	end
-	begin tran
+	
 		Delete from DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
-	commit tran
+		--Delete from QLTV_TRAM_1.qltv.dbo.DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
+		--Delete from QLTV_TRAM_2.qltv.dbo.DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
+		--Delete from QLTV_TRAM_3.qltv.dbo.DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
+		--Delete from QLTV_TRAM_4.qltv.dbo.DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
+	
 end
 go
