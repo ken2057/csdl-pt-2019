@@ -73,22 +73,26 @@ begin
 		raiserror(N'Không tồn tại tài liệu này',16,1)
 		return
 	end
-	select  
-		ma_tailieu,
-		ten_tailieu, 
-		(select ten_tacgia from TacGia where TacGia.ma_tacgia = TaiLieu.ma_tacgia_1) as ten_tacgia, 
-		(select ten_tacgia from TacGia where TacGia.ma_tacgia = TaiLieu.ma_tacgia_2) as ten_tacgia1, 
-		(select ten_tacgia from TacGia where TacGia.ma_tacgia = TaiLieu.ma_tacgia_3) as ten_tacgia2, 
-		ngonngu,
-		bia,
-		gia ,
-		sl_kho,
-		(select ten_loai from LoaiTaiLieu where LoaiTaiLieu.ma_loai = TaiLieu.ma_loai) as ten_loai,
-		tinhtrang,
-		tomtat,
-		ngay_phathanh
-	from TaiLieu
-	where ma_tailieu = @maTaiLieu
+	select tram234.ma_tailieu,ma_loai, tomtat, ngonngu,ten_tailieu, bia, gia, ngay_phathanh, tinhtrang,sl_kho,
+				ma_tacgia_1,ma_tacgia_2,ma_tacgia_3
+		from
+		(select  
+			tram23.ma_tailieu,ma_loai, tomtat, ngonngu,ten_tailieu, bia, gia, ngay_phathanh, tinhtrang,sl_kho
+		from 	
+			(select tram2.ma_tailieu,ma_loai, tomtat, ngonngu,ten_tailieu, bia, gia, ngay_phathanh 
+			from
+				(select * from QLTV_TRAM_2.qltv.dbo.TaiLieu where ma_tailieu = @maTaiLieu) tram2 
+					 join 
+				(select * from TaiLieu where ma_tailieu = @maTaiLieu) tram3 
+					on tram2.ma_tailieu = tram3.ma_tailieu
+			) tram23
+				join
+			(select * from QLTV_TRAM_4.qltv.dbo.TaiLieu where ma_tailieu = @maTaiLieu) tram4
+				on tram23.ma_tailieu = tram4.ma_tailieu) tram234
+			join
+		(select * 
+		from QLTV_TRAM_1.qltv.dbo.TaiLieu where ma_tailieu = @maTaiLieu) tram1
+			on tram234.ma_tailieu = tram1.ma_tailieu
 end
 
 go 
