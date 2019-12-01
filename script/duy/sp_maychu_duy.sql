@@ -25,21 +25,21 @@ begin
 	--------- Do hiện tại chỉ code ở local nên k cần chạy mấy cái dưới
 	--------- nhưng vẫn phải ghi ra để mốt test
 	-- update ở trạm khác
-	--update QLTV_TRAM_1.qltv.dbo.LoaiTaiLieu
-	--set ten_loai = @tenLoai, ghichu = @ghiChu
-	--where ma_loai = @maLoai
-	----
-	--update QLTV_TRAM_2.qltv.dbo.LoaiTaiLieu
-	--set ten_loai = @tenLoai, ghichu = @ghiChu
-	--where ma_loai = @maLoai
-	----
-	--update QLTV_TRAM_3.qltv.dbo.LoaiTaiLieu
-	--set ten_loai = @tenLoai, ghichu = @ghiChu
-	--where ma_loai = @maLoai
-	----
-	--update QLTV_TRAM_4.qltv.dbo.LoaiTaiLieu
-	--set ten_loai = @tenLoai, ghichu = @ghiChu
-	--where ma_loai = @maLoai
+	update QLTV_TRAM_1.qltv.dbo.LoaiTaiLieu
+	set ten_loai = @tenLoai, ghichu = @ghiChu
+	where ma_loai = @maLoai
+	--
+	update QLTV_TRAM_2.qltv.dbo.LoaiTaiLieu
+	set ten_loai = @tenLoai, ghichu = @ghiChu
+	where ma_loai = @maLoai
+	--
+	update QLTV_TRAM_3.qltv.dbo.LoaiTaiLieu
+	set ten_loai = @tenLoai, ghichu = @ghiChu
+	where ma_loai = @maLoai
+	--
+	update QLTV_TRAM_4.qltv.dbo.LoaiTaiLieu
+	set ten_loai = @tenLoai, ghichu = @ghiChu
+	where ma_loai = @maLoai
 end
 go
 create proc sp_add_loai
@@ -54,10 +54,10 @@ begin
 	insert into LoaiTaiLieu values (@ma, @tenLoai, @ghiChu)
 	--------- Do hiện tại chỉ code ở local nên k cần chạy mấy cái dưới
 	--------- nhưng vẫn phải ghi ra để mốt test
-	--insert into QLTV_TRAM_1.qltv.dbo.LoaiTaiLieu values (@ma, @tenLoai, @ghiChu)
-	--insert into QLTV_TRAM_2.qltv.dbo.LoaiTaiLieu values (@ma, @tenLoai, @ghiChu)
-	--insert into QLTV_TRAM_3.qltv.dbo.LoaiTaiLieu values (@ma, @tenLoai, @ghiChu)
-	--insert into QLTV_TRAM_4.qltv.dbo.LoaiTaiLieu values (@ma, @tenLoai, @ghiChu)
+	insert into QLTV_TRAM_1.qltv.dbo.LoaiTaiLieu values (@ma, @tenLoai, @ghiChu)
+	insert into QLTV_TRAM_2.qltv.dbo.LoaiTaiLieu values (@ma, @tenLoai, @ghiChu)
+	insert into QLTV_TRAM_3.qltv.dbo.LoaiTaiLieu values (@ma, @tenLoai, @ghiChu)
+	insert into QLTV_TRAM_4.qltv.dbo.LoaiTaiLieu values (@ma, @tenLoai, @ghiChu)
 end
 go
 create proc sp_delete_loai
@@ -72,9 +72,9 @@ begin
 	end
 	--
 	delete LoaiTaiLieu where ma_loai = @ma_loai
-	--delete QLTV_TRAM_1.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
-	--delete QLTV_TRAM_2.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
-	--delete QLTV_TRAM_3.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
-	--delete QLTV_TRAM_4.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
+	delete QLTV_TRAM_1.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
+	delete QLTV_TRAM_2.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
+	delete QLTV_TRAM_3.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
+	delete QLTV_TRAM_4.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
 end
 go
