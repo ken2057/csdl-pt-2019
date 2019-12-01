@@ -49,3 +49,4 @@ D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.Ge
 D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.CopyComplete
 D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.exe
 D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.pdb
+D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csprojAssemblyReference.cache

@@ -35,10 +35,10 @@ namespace csdl_pt.Pages
 
         private void Init()
         {
-            get_taiLieu();
+            get_dsTaiLieu();
         }
 
-        private void get_taiLieu()
+        private void get_dsTaiLieu()
         {
             using (var conn = new SqlConnection(connectionString))
             using (var command = new SqlCommand("sp_get_dsTaiLieu", conn)
@@ -75,7 +75,7 @@ namespace csdl_pt.Pages
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message, "Error get_taiLieu");
+                    MessageBox.Show(e.Message, "Error get_dstaiLieu");
                 }
                 finally
                 {

@@ -63,7 +63,36 @@ begin
 	where ma_sinhvien = @maSinhVien
 end
 
+
+
 go
+create proc sp_get_dsTaiLieu
+as
+begin
+	select tram234.ma_tailieu, ngonngu,ten_tailieu, sl_kho,
+				(select ten_tacgia from TacGia where TacGia.ma_tacgia = ma_tacgia_1) as ten_tacgia
+		from
+		(select  
+			tram23.ma_tailieu,ma_loai, tomtat, ngonngu,ten_tailieu, bia, gia, ngay_phathanh, tinhtrang,sl_kho
+		from 	
+			(select tram2.ma_tailieu,ma_loai, tomtat, ngonngu,ten_tailieu, bia, gia, ngay_phathanh 
+			from
+				(select * from QLTV_TRAM_2.qltv.dbo.TaiLieu) tram2 
+					 join 
+				(select * from QLTV_TRAM_3.qltv.dbo.TaiLieu) tram3 
+					on tram2.ma_tailieu = tram3.ma_tailieu
+			) tram23
+				join
+			(select * from QLTV_TRAM_4.qltv.dbo.TaiLieu) tram4
+				on tram23.ma_tailieu = tram4.ma_tailieu) tram234
+			join
+		(select * 
+		from TaiLieu) tram1
+			on tram234.ma_tailieu = tram1.ma_tailieu
+end
+
+go
+
 
 create proc sp_get_tailieu
 						@maTaiLieu varchar(20)
@@ -88,7 +117,7 @@ begin
 					on tram2.ma_tailieu = tram3.ma_tailieu
 			) tram23
 				join
-			(select * from TaiLieu where ma_tailieu = @maTaiLieu) tram4
+			(select * from QLTV_TRAM_4.qltv.dbo.TaiLieu where ma_tailieu = @maTaiLieu) tram4
 				on tram23.ma_tailieu = tram4.ma_tailieu) tram234
 			join
 		(select * 

@@ -81,8 +81,11 @@ namespace csdl_pt.Pages
         {
             navService = NavigationService.GetNavigationService(this);
             showOption pg = new showOption(connectionString);
-            _addTaiLieu.get_dsTacGia();
-            if (_addTaiLieu != null) navService.Navigate(_addTaiLieu);
+            if (_addTaiLieu != null)
+            {
+             _addTaiLieu.get_dsTacGia();
+             navService.Navigate(_addTaiLieu);
+            }
             else navService.Navigate(pg);
             //_ = _addTaiLieu != null ? navService.Navigate(tg) : navService.Navigate(pg);
         }

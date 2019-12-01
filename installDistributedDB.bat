@@ -110,9 +110,9 @@ echo ----------------------------------------
 echo ---             Add data             ---
 echo ----------------------------------------
 echo Add data to MayChu from !data!
-sqlcmd -i !data!
+sqlcmd -S !server[0]! -U !account! -P "!password!" -i !data!
 echo Add data to Tram from !transfer!
-sqlcmd -i !transfer!
+sqlcmd -S !server[0]! -U !account! -P "!password!" -i !transfer!
 TIMEOUT /T 3 /NOBREAK
 echo ----------------------------------------
 echo ---     Add login on each Server     ---
