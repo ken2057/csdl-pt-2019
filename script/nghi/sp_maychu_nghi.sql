@@ -15,7 +15,6 @@ create proc sp_add_docgia
 					@sDT varchar(15)
 as
 begin
-	
 	insert into DocGia values(@maSinhVien, @hoTen, @ngaySinh,@diaChi,@sDT)
 	insert into QLTV_TRAM_1.qltv.dbo.DocGia values (@maSinhVien, @hoTen, @ngaySinh,@diaChi,@sDT)
 	insert into QLTV_TRAM_2.qltv.dbo.DocGia values (@maSinhVien, @hoTen, @ngaySinh,@diaChi,@sDT)
@@ -136,6 +135,30 @@ begin
 						@tomTat, 
 						@ngayPhatHanh
 	)
+	insert into QLTV_TRAM_1.qltv.dbo.TaiLieu(ma_tailieu,ma_tacgia_1,ma_tacgia_2,ma_tacgia_3) values(
+						@maTL, 
+						@maTG1, 
+						@maTG2, 
+						@maTG3
+	)
+	insert into QLTV_TRAM_2.qltv.dbo.TaiLieu(ma_tailieu,ma_loai,ten_tailieu,ngonngu,tomtat) values(
+						@maTL, 
+						@maLoaiTL, 
+						@tenTaiLieu,
+						@ngonNgu, 
+						@tomTat
+	)
+	insert into QLTV_TRAM_3.qltv.dbo.TaiLieu(ma_tailieu,bia,gia,ngay_phathanh) values(
+						@maTL, 
+						@bia, 
+						@giaTL, 
+						@ngayPhatHanh
+	)
+	insert into QLTV_TRAM_4.qltv.dbo.TaiLieu(ma_tailieu,tinhtrang,sl_kho) values(
+						@maTL, 
+						@tinhTrang, 
+						@soLuong
+	)
 end
 
 go
@@ -169,6 +192,34 @@ begin
 		sl_kho = @soLuong,
 		tomtat = @tomTat,
 		ngay_phathanh = @ngayPhatHanh
+	where ma_tailieu = @maTL
+	exec sp_get_tailieu @maTL
+
+	update QLTV_TRAM_1.qltv.dbo.TaiLieu
+	set ma_tacgia_1 = @maTG1, 
+		ma_tacgia_2 = @maTG2,
+		ma_tacgia_3 = @maTG3
+	where ma_tailieu = @maTL
+	exec sp_get_tailieu @maTL
+
+	update QLTV_TRAM_2.qltv.dbo.TaiLieu
+	set ma_loai = @maLoaiTL,
+		ngonngu = @ngonNgu,
+		ten_tailieu = @tenTaiLieu,
+		tomtat = @tomTat
+	where ma_tailieu = @maTL
+	exec sp_get_tailieu @maTL
+
+	update QLTV_TRAM_3.qltv.dbo.TaiLieu
+	set bia=@bia,
+		gia = @giaTL,
+		ngay_phathanh = @ngayPhatHanh
+	where ma_tailieu = @maTL
+	exec sp_get_tailieu @maTL
+
+	update QLTV_TRAM_4.qltv.dbo.TaiLieu
+	set tinhtrang = @tinhTrang,
+		sl_kho = @soLuong
 	where ma_tailieu = @maTL
 	exec sp_get_tailieu @maTL
 end
