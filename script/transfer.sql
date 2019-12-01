@@ -44,7 +44,7 @@ insert into QLTV_Tram_4.qltv.dbo.NhanVien select * from NhanVien where ma_chinha
 go
 -- Insert TaiLieu
 insert into QLTV_Tram_1.qltv.dbo.TaiLieu select ma_tailieu, ma_tacgia_1, ma_tacgia_2, ma_tacgia_3 from TaiLieu
-insert into QLTV_Tram_2.qltv.dbo.TaiLieu select ma_tailieu, ma_loai, tomtat, ngonngu, ten_tailieu from TaiLieu
+insert into QLTV_Tram_2.qltv.dbo.TaiLieu select ma_tailieu, ma_loai, ngonngu, ten_tailieu, tomtat from TaiLieu
 insert into QLTV_Tram_3.qltv.dbo.TaiLieu select ma_tailieu, bia, gia, ngay_phathanh from TaiLieu
 insert into QLTV_Tram_4.qltv.dbo.TaiLieu select ma_tailieu, tinhtrang, sl_kho from TaiLieu
 go
