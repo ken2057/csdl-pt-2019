@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿csdl-pt
 
 
@@ -11,33 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\App.xaml
-11-935811407
+172093610706
 
-2853430796
+34679081394
 19-2017695888
-MainWindow.xaml;Pages\AddTaiLieu.xaml;Pages\ChiTietTaiLieu.xaml;Pages\DocGia.xaml;Pages\LoaiTL.xaml;Pages\login.xaml;Pages\Muon.xaml;Pages\NhanVien.xaml;Pages\showOption.xaml;Pages\TacGia.xaml;Pages\TaiLieu.xaml;
+MainWindow.xaml;Pages\AddTaiLieu.xaml;Pages\AddDangKy.xaml;Pages\Add_Muon.xaml;Pages\Borrow.xaml;Pages\ChiTietTaiLieu.xaml;Pages\DangKy.xaml;Pages\DocGia.xaml;Pages\LoaiTL.xaml;Pages\login.xaml;Pages\Muon.xaml;Pages\NhanVien.xaml;Pages\showOption.xaml;Pages\TacGia.xaml;Pages\TaiLieu.xaml;Pages\UpdateQuaTrinhMuon.xaml;Pages\Update_Muon.xaml;
 
 False
 
-=======
-﻿csdl-pt
-
-
-winexe
-C#
-.cs
-D:\project\csdl-pt\App CSDLPT\csdl-pt\obj\Debug\
-csdl_pt
-none
-false
-DEBUG;TRACE
-D:\project\csdl-pt\App CSDLPT\csdl-pt\App.xaml
-16-1656838658
-
-332097333603
-191035996303
-MainWindow.xaml;Pages\AddDangKy.xaml;Pages\Add_Muon.xaml;Pages\Borrow.xaml;Pages\ChiTietTaiLieu.xaml;Pages\DangKy.xaml;Pages\DocGia.xaml;Pages\LoaiTL.xaml;Pages\login.xaml;Pages\Muon.xaml;Pages\NhanVien.xaml;Pages\showOption.xaml;Pages\TacGia.xaml;Pages\TaiLieu.xaml;Pages\UpdateQuaTrinhMuon.xaml;Pages\Update_Muon.xaml;
-
-False
-
->>>>>>> 30f782ab44097f88ef868c9e66733ae249ae080e

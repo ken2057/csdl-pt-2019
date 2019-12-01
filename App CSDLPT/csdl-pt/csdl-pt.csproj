@@ -92,6 +92,7 @@
     <Page Include="Pages\AddTaiLieu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddDangKy.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -154,10 +155,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Pages\AddTaiLieu.xaml.cs">
       <DependentUpon>AddTaiLieu.xaml</DependentUpon>
-=======
+    </Compile>
     <Compile Include="Pages\AddDangKy.xaml.cs">
       <DependentUpon>AddDangKy.xaml</DependentUpon>
     </Compile>
@@ -166,7 +166,6 @@
     </Compile>
     <Compile Include="Pages\Borrow.xaml.cs">
       <DependentUpon>Borrow.xaml</DependentUpon>
->>>>>>> 30f782ab44097f88ef868c9e66733ae249ae080e
     </Compile>
     <Compile Include="Pages\ChiTietTaiLieu.xaml.cs">
       <DependentUpon>ChiTietTaiLieu.xaml</DependentUpon>
