@@ -23,13 +23,15 @@ namespace csdl_pt.Pages
     public partial class TacGia : Page
     {
         string connectionString;
-        List<EF.TacGia> listTacGia;
+        public static List<EF.TacGia> listTacGia;
+        AddTaiLieu _addTaiLieu;
+        NavigationService navService;
         EF.TacGia tacGia;
-        public TacGia(string connectionString)
+        public TacGia(string connectionString, AddTaiLieu addTaiLieu = null)
         {
             InitializeComponent();
             this.connectionString = connectionString;
-
+            _addTaiLieu = addTaiLieu;
             get_dsTacGia();
         }
 
@@ -77,9 +79,12 @@ namespace csdl_pt.Pages
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService navService = NavigationService.GetNavigationService(this);
+            navService = NavigationService.GetNavigationService(this);
             showOption pg = new showOption(connectionString);
-            navService.Navigate(pg);
+            _addTaiLieu.get_dsTacGia();
+            if (_addTaiLieu != null) navService.Navigate(_addTaiLieu);
+            else navService.Navigate(pg);
+            //_ = _addTaiLieu != null ? navService.Navigate(tg) : navService.Navigate(pg);
         }
 
         private void btnThemTaGia_Click(object sender, RoutedEventArgs e)

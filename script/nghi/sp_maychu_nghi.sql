@@ -101,3 +101,74 @@ begin
 	from TaiLieu
 	where ma_tailieu = @maTaiLieu
 end
+
+go 
+
+create proc sp_add_tailieu
+						@maTG1 varchar(20),
+						@maTG2 varchar(20),
+						@maTG3 varchar(20),
+						@maLoaiTL varchar(20),
+						@ngonNgu nvarchar(15),
+						@bia nvarchar(20),
+						@tinhTrang char(1),
+						@giaTL money,
+						@tenTaiLieu nvarchar(100),
+						@soLuong tinyint,
+						@tomTat ntext,
+						@ngayPhatHanh datetime
+as
+begin
+	declare @maTL varchar(20)
+	select @maTL = count(ma_tailieu) + 1 from TaiLieu
+	insert into TaiLieu values(
+						@maTL, 
+						@maTG1, 
+						@maTG2, 
+						@maTG3, 
+						@maLoaiTL, 
+						@ngonNgu, 
+						@bia, 
+						@tinhTrang, 
+						@giaTL, 
+						@tenTaiLieu, 
+						@soLuong, 
+						@tomTat, 
+						@ngayPhatHanh
+	)
+end
+
+go
+
+create proc sp_update_tailieu
+						@maTL varchar(20),
+						@maTG1 varchar(20),
+						@maTG2 varchar(20),
+						@maTG3 varchar(20),
+						@maLoaiTL varchar(20),
+						@ngonNgu nvarchar(15),
+						@bia nvarchar(20),
+						@tinhTrang char(1),
+						@giaTL money,
+						@tenTaiLieu nvarchar(100),
+						@soLuong tinyint,
+						@tomTat ntext,
+						@ngayPhatHanh datetime
+as
+begin
+	update TaiLieu
+	set ma_tacgia_1 = @maTG1, 
+		ma_tacgia_2 = @maTG2,
+		ma_tacgia_3 = @maTG3,
+		ma_loai = @maLoaiTL,
+		ngonngu = @ngonNgu,
+		bia=@bia,
+		tinhtrang = @tinhTrang,
+		gia = @giaTL,
+		ten_tailieu = @tenTaiLieu,
+		sl_kho = @soLuong,
+		tomtat = @tomTat,
+		ngay_phathanh = @ngayPhatHanh
+	where ma_tailieu = @maTL
+	exec sp_get_tailieu @maTL
+end

@@ -48,15 +48,15 @@ namespace csdl_pt.Pages
         private void BtnUpdateMuon_Click(object sender, RoutedEventArgs e)
         {
             NavigationService navService = NavigationService.GetNavigationService(this);
-            UpdateQuaTrinhMuon pg = new UpdateQuaTrinhMuon(connectionString);
-            navService.Navigate(pg);
+           // UpdateQuaTrinhMuon pg = new UpdateQuaTrinhMuon(connectionString);
+           // navService.Navigate(pg);
         }
 
         private void BtnMuon_Click(object sender, RoutedEventArgs e)
         {
             NavigationService navService = NavigationService.GetNavigationService(this);
-            Borrow pg = new Borrow(connectionString);
-            navService.Navigate(pg);
+            // Borrow pg = new Borrow(connectionString);
+            // navService.Navigate(pg);
         }
     }
 }

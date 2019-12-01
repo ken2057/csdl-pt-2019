@@ -95,13 +95,20 @@ namespace csdl_pt.Pages
         {
             taiLieu = (EF.TaiLieu)dtgTaiLieu.SelectedItem;
             navService = NavigationService.GetNavigationService(this);
-            ChiTietTaiLieu pg = new ChiTietTaiLieu(connectionString);
+            ChiTietTaiLieu pg = new ChiTietTaiLieu(connectionString, this);
             navService.Navigate(pg);
         }
 
         private void dtgTaiLieu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void btnThemTaiLieu_Click(object sender, RoutedEventArgs e)
+        {
+            navService = NavigationService.GetNavigationService(this);
+            AddTaiLieu pg = new AddTaiLieu(connectionString, this);
+            navService.Navigate(pg);
         }
     }
 }

@@ -1,0 +1,193 @@
+﻿<Page x:Class="csdl_pt.Pages.AddTaiLieu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:csdl_pt.Pages"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddTaiLieu">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel>
+            <Button Content="Quay lại" Name="btnBack" Click="btnBack_Click"/>
+            <Label Content="Tài liệu"/>
+        </StackPanel>
+
+        <Grid Grid.Column="3" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Name="lbMaTaiLieu" Grid.Row="0" Content="Mã Tài Liệu"/>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label HorizontalAlignment="Left"  Name="lbTheLoai" Content="Thể loại" Width="100"/>
+                <ComboBox Name="cbTheLoai" Grid.Column="1" ></ComboBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="Tên Tài Liệu"/>
+            <TextBox Grid.Row="2" x:Name="txtTenTaiLieu"></TextBox>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="458*"/>
+                <ColumnDefinition Width="128*"/>
+                <ColumnDefinition Width="43*"/>
+                <ColumnDefinition Width="104*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.35*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Content="Tác giả" Grid.ColumnSpan="4" Margin="0,0,-0.4,94.8" Grid.RowSpan="2" ></Label>
+            <Button Content="Thêm" Width="50" HorizontalAlignment="Left" Margin="50 5 0 0"
+                    Click="btnThemTacGia_Click" Height="29" Grid.RowSpan="2" VerticalAlignment="Top"></Button>
+            <TextBox
+            Name="txtSearchTacGia"
+            Grid.Row="0" Grid.Column="1"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            Margin="127.9,5,4.6,94.8"
+            KeyUp="txtSearchTacGia_KeyUp" Grid.RowSpan="2"/>
+            <DataGrid Name="dtgTacGia" 
+                  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" 
+                  Margin="5,5.4,4.6,4.8"
+                  AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding listTacGiaChecked}" x:Name="cbCheckTG" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn 
+                    Width="1*" 
+                    Header="Tên tác giả" 
+                    Binding="{Binding ten_tacgia}" 
+                    IsReadOnly="True"/>
+                    <DataGridTextColumn
+                    Width="1*" 
+                    Header="Ghi chú" 
+                    Binding="{Binding ghichu}" 
+                    IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Name="lbNgonNgu" Grid.Row="0"  Content="Ngôn Ngữ"></Label>
+                <TextBox Name="txtNgonNgu" Grid.Column="1" ></TextBox>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Name="lbLoaiBia"  Content="Loại Bìa"></Label>
+                <TextBox Name="txtLoaiBia" Grid.Column="1" ></TextBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="3" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.45*"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Name="lbNgayPhatHanh" Grid.Row="0"  Content="Ngày Phát Hành"></Label>
+                <DatePicker Name="dpNgayPhatHanh"  Grid.Column="1" SelectedDate="{x:Static sys:DateTime.Now}" >
+                    <DatePicker.Resources>
+                        <Style TargetType="{x:Type DatePickerTextBox}">
+                            <Setter Property="Control.Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <TextBox x:Name="PART_TextBox"
+                                    Text="{Binding Path=SelectedDate, StringFormat='dd/MM/yyyy', 
+                                    RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Name="lbSoLuong" Grid.Column="0"  Content="Số Lượng"></Label>
+                <TextBox Grid.Column="1" x:Name="txtSoLuong"></TextBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="Tóm Tắt"></Label>
+            <TextBox Grid.Row="2" Name="txtTomTat"></TextBox>
+        </Grid>
+        <Grid Grid.Row="6" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label  Grid.Column="0"  Content="Giá"></Label>
+            <TextBox Margin="5" Grid.Column="1" x:Name="txtGia"></TextBox>
+        </Grid>
+        <Button 
+            Name="btnThemTaGia" Content="Thêm" 
+            Grid.Row="6" Grid.Column="3" 
+            Margin="5px" 
+            Width="60"
+            Click="btnThemTaiLieu_Click"/>
+    </Grid>
+</Page>

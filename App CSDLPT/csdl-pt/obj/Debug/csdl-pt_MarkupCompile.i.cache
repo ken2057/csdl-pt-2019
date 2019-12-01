@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\
+D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\obj\Debug\
 csdl_pt
 none
 false
 DEBUG;TRACE
-C:\Users\NGUYENTHANHHIEU\Desktop\csdl-pt-2019\App CSDLPT\csdl-pt\App.xaml
-10-391293475
+D:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\App.xaml
+11-935811407
 
-281059451876
-191447187575
-MainWindow.xaml;Pages\ChiTietTaiLieu.xaml;Pages\DocGia.xaml;Pages\LoaiTL.xaml;Pages\login.xaml;Pages\Muon.xaml;Pages\NhanVien.xaml;Pages\showOption.xaml;Pages\TacGia.xaml;Pages\TaiLieu.xaml;
+29-1613869645
+19-2017695888
+MainWindow.xaml;Pages\AddTaiLieu.xaml;Pages\ChiTietTaiLieu.xaml;Pages\DocGia.xaml;Pages\LoaiTL.xaml;Pages\login.xaml;Pages\Muon.xaml;Pages\NhanVien.xaml;Pages\showOption.xaml;Pages\TacGia.xaml;Pages\TaiLieu.xaml;
 
-False
+True
 
