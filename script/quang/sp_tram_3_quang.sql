@@ -21,10 +21,10 @@ begin
 	end
 	
 		insert into TacGia values(@ma, @tentacgia, @ghichu)
-		--insert into QLTV_MAY_CHU.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
-		--insert into QLTV_TRAM_1.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
-		--insert into QLTV_TRAM_2.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
-		--insert into QLTV_TRAM_4.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
+		insert into QLTV_MAY_CHU.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
+		insert into QLTV_TRAM_1.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
+		insert into QLTV_TRAM_2.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
+		insert into QLTV_TRAM_4.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
 	
 end
 go
@@ -45,21 +45,21 @@ begin
 		set ten_tacgia = @ten, ghichu = @ghichu
 		where ma_tacgia = @ma
 
-		--update QLTV_MAY_CHU.qltv.dbo.TacGia
-		--set ten_tacgia = @ten, ghichu = @ghichu
-		--where ma_tacgia = @ma
+		update QLTV_MAY_CHU.qltv.dbo.TacGia
+		set ten_tacgia = @ten, ghichu = @ghichu
+		where ma_tacgia = @ma
 
-		--update QLTV_TRAM_1.qltv.dbo.TacGia
-		--set ten_tacgia = @ten, ghichu = @ghichu
-		--where ma_tacgia = @ma
+		update QLTV_TRAM_1.qltv.dbo.TacGia
+		set ten_tacgia = @ten, ghichu = @ghichu
+		where ma_tacgia = @ma
 
-		--update QLTV_TRAM_2.qltv.dbo.TacGia
-		--set ten_tacgia = @ten, ghichu = @ghichu
-		--where ma_tacgia = @ma
+		update QLTV_TRAM_2.qltv.dbo.TacGia
+		set ten_tacgia = @ten, ghichu = @ghichu
+		where ma_tacgia = @ma
 
-		--update QLTV_TRAM_4.qltv.dbo.TacGia
-		--set ten_tacgia = @ten, ghichu = @ghichu
-		--where ma_tacgia = @ma
+		update QLTV_TRAM_4.qltv.dbo.TacGia
+		set ten_tacgia = @ten, ghichu = @ghichu
+		where ma_tacgia = @ma
 	
 end
 go
@@ -74,10 +74,10 @@ begin
 	end
 	
 		Delete from TacGia where ma_tacgia = @ma
-		--Delete from QLTV_MAY_CHU.qltv.dbo.TacGia where ma_tacgia = @ma
-		--Delete from QLTV_TRAM_1.qltv.dbo.TacGia where ma_tacgia = @ma
-		--Delete from QLTV_TRAM_2.qltv.dbo.TacGia where ma_tacgia = @ma
-		--Delete from QLTV_TRAM_4.qltv.dbo.TacGia where ma_tacgia = @ma
+		Delete from QLTV_MAY_CHU.qltv.dbo.TacGia where ma_tacgia = @ma
+		Delete from QLTV_TRAM_1.qltv.dbo.TacGia where ma_tacgia = @ma
+		Delete from QLTV_TRAM_2.qltv.dbo.TacGia where ma_tacgia = @ma
+		Delete from QLTV_TRAM_4.qltv.dbo.TacGia where ma_tacgia = @ma
 	
 end
 go
@@ -118,10 +118,10 @@ begin
 	end
 	
 		insert into DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
-		--insert into QLTV_MAY_CHU.qltv.dbo.DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
-		--insert into QLTV_TRAM_1.qltv.dbo.DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
-		--insert into QLTV_TRAM_2.qltv.dbo.DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
-		--insert into QLTV_TRAM_4.qltv.dbo.DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
+		insert into QLTV_MAY_CHU.qltv.dbo.DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
+		insert into QLTV_TRAM_1.qltv.dbo.DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
+		insert into QLTV_TRAM_2.qltv.dbo.DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
+		insert into QLTV_TRAM_4.qltv.dbo.DangKy values(@maTL, @maSV, @ngaygio, @ghichu)
 	
 end
 go
@@ -137,10 +137,10 @@ begin
 	end
 	
 		Delete from DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
-		--Delete from QLTV_MAY_CHU.qltv.dbo.DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
-		--Delete from QLTV_TRAM_1.qltv.dbo.DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
-		--Delete from QLTV_TRAM_2.qltv.dbo.DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
-		--Delete from QLTV_TRAM_4.qltv.dbo.DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
+		Delete from QLTV_MAY_CHU.qltv.dbo.DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
+		Delete from QLTV_TRAM_1.qltv.dbo.DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
+		Delete from QLTV_TRAM_2.qltv.dbo.DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
+		Delete from QLTV_TRAM_4.qltv.dbo.DangKy where ma_tailieu = @maTL and ma_sinhvien = @maSV
 	
 end
 go

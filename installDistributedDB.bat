@@ -95,15 +95,6 @@ for %%i in (%list%) do (
 	TIMEOUT /T 3 /NOBREAK
 )
 echo ----------------------------------------
-echo ---     Add login on each Server     ---
-echo ----------------------------------------
-for %%i in (%list%) do (
-	echo --------------------
-	echo - Install login/user on !server[%%i]! from !user[%%i]!
-	sqlcmd -S !server[%%i]! -U !account! -P "!password!" -i !user[%%i]!
-)
-TIMEOUT /T 3 /NOBREAK
-echo ----------------------------------------
 echo ---      Add SP on each Server       ---
 echo ----------------------------------------
 for %%i in (%list%) do (
@@ -122,6 +113,16 @@ echo Add data to MayChu from !data!
 sqlcmd -i !data!
 echo Add data to Tram from !transfer!
 sqlcmd -i !transfer!
+TIMEOUT /T 3 /NOBREAK
+echo ----------------------------------------
+echo ---     Add login on each Server     ---
+echo ----------------------------------------
+for %%i in (%list%) do (
+	echo --------------------
+	echo - Install login/user on !server[%%i]! from !user[%%i]!
+	sqlcmd -S !server[%%i]! -U !account! -P "!password!" -i !user[%%i]!
+)
+TIMEOUT /T 3 /NOBREAK
 echo ----------------------------------------
 echo Done
 pause

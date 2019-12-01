@@ -45,19 +45,19 @@ begin
 		where ma_sinhvien = @maSinhVien
 		select * from DocGia where ma_sinhvien = @maSinhVien
 	end
-	--update QLTV_MAY_CHU.qltv.dbo.DocGia
-	--set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
-	--where ma_sinhvien = @maSinhVien
+	update QLTV_MAY_CHU.qltv.dbo.DocGia
+	set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
+	where ma_sinhvien = @maSinhVien
 
-	--update QLTV_TRAM_1.qltv.dbo.DocGia
-	--set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
-	--where ma_sinhvien = @maSinhVien
+	update QLTV_TRAM_1.qltv.dbo.DocGia
+	set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
+	where ma_sinhvien = @maSinhVien
 
-	--update QLTV_TRAM_2.qltv.dbo.DocGia
-	--set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
-	--where ma_sinhvien = @maSinhVien
+	update QLTV_TRAM_2.qltv.dbo.DocGia
+	set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
+	where ma_sinhvien = @maSinhVien
 
-	--update QLTV_TRAM_4.qltv.dbo.DocGia
-	--set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
-	--where ma_sinhvien = @maSinhVien
+	update QLTV_TRAM_4.qltv.dbo.DocGia
+	set hoten = @hoTen, NgaySinh = @ngaySinh, diachi = @diaChi, sdt = @sDT
+	where ma_sinhvien = @maSinhVien
 end

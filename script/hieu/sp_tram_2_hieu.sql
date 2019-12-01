@@ -81,7 +81,7 @@ begin
 		--Cập nhật nếu quyền là admin
 		if (@quyen = 'admin') 
 		begin
-			--Cập nhật trạm 2
+			--Cập nhật trạm
 			update NhanVien
 			set ma_nhanvien = @quyen + cast((select count(*) from NhanVien where @quyen= quyen )+ 1 as varchar(20)),quyen = @quyen, ma_chinhanh = @ma_chinhanh ,matkhau = @matkhau
 			where @ma_nv = ma_nhanvien 
@@ -94,7 +94,7 @@ begin
 		--cập nhật mã nếu quyền là nhân viên
 		if (@quyen = 'nhanvien')
 		begin
-			--Cập nhật trạm 2
+			--Cập nhật trạm
 			update Nhanvien
 			set ma_nhanvien = @quyen + cast((select count(*) from NhanVien where @quyen = quyen and @ma_chinhanh = ma_ChiNhanh)+ 1 as varchar(20)) + @ma_chinhanh,
 				quyen = @quyen, ma_chinhanh = @ma_chinhanh ,matkhau = @matkhau
@@ -108,7 +108,7 @@ begin
 		--cập nhật mã nếu quyền là thủ thư
 		if (@quyen = 'thuthu')
 		begin
-			--Cập nhật trạm 2
+			--Cập nhật trạm
 			update Nhanvien
 			set ma_nhanvien =@quyen + @ma_chinhanh,
 				quyen = @quyen, ma_chinhanh = @ma_chinhanh ,matkhau = @matkhau
@@ -125,3 +125,4 @@ begin
 			raiserror('Bạn không thể thực hiện chức năng này',16,1)
 		end
 end
+go
