@@ -126,4 +126,3 @@ begin
 			raiserror('Bạn không thể thực hiện chức năng này',16,1)
 	end
 end
-go
