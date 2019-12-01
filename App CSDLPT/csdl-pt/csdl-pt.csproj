@@ -92,10 +92,25 @@
     <Page Include="Pages\AddTaiLieu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    <Page Include="Pages\AddDangKy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Add_Muon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Borrow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\ChiTietTaiLieu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DangKy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\DocGia.xaml">
       <SubType>Designer</SubType>
@@ -129,13 +144,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\UpdateQuaTrinhMuon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Update_Muon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Pages\AddTaiLieu.xaml.cs">
       <DependentUpon>AddTaiLieu.xaml</DependentUpon>
+=======
+    <Compile Include="Pages\AddDangKy.xaml.cs">
+      <DependentUpon>AddDangKy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Add_Muon.xaml.cs">
+      <DependentUpon>Add_Muon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Borrow.xaml.cs">
+      <DependentUpon>Borrow.xaml</DependentUpon>
+>>>>>>> 30f782ab44097f88ef868c9e66733ae249ae080e
     </Compile>
     <Compile Include="Pages\ChiTietTaiLieu.xaml.cs">
       <DependentUpon>ChiTietTaiLieu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DangKy.xaml.cs">
+      <DependentUpon>DangKy.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\DialogResult.cs" />
     <Compile Include="Pages\DocGia.xaml.cs">
@@ -162,6 +199,12 @@
     </Compile>
     <Compile Include="Pages\TaiLieu.xaml.cs">
       <DependentUpon>TaiLieu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UpdateQuaTrinhMuon.xaml.cs">
+      <DependentUpon>UpdateQuaTrinhMuon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Update_Muon.xaml.cs">
+      <DependentUpon>Update_Muon.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

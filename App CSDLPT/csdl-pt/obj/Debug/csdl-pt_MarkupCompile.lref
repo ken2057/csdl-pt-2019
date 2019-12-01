@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 
 FD:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\MainWindow.xaml;;
@@ -12,3 +13,24 @@ FD:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\Pages\showOption.xaml;;
 FD:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\Pages\TacGia.xaml;;
 FD:\Code\CSDL\PhanTan\csdl-pt-2019\App CSDLPT\csdl-pt\Pages\TaiLieu.xaml;;
 
+=======
+﻿
+
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\MainWindow.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\AddDangKy.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\Add_Muon.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\Borrow.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\ChiTietTaiLieu.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\DangKy.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\DocGia.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\LoaiTL.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\login.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\Muon.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\NhanVien.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\showOption.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\TacGia.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\TaiLieu.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\UpdateQuaTrinhMuon.xaml;;
+FD:\project\csdl-pt\App CSDLPT\csdl-pt\Pages\Update_Muon.xaml;;
+
+>>>>>>> 30f782ab44097f88ef868c9e66733ae249ae080e

@@ -18,9 +18,15 @@ as
 begin
 	declare @ma varchar(20)
 	set @ma = (select count(*) from TacGia) + 1 + ''
-
-	insert into TacGia values(@ma, @tentacgia, @ghichu)
-	--insert into QLTV_MAY_CHU.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
+	if not exists (select * from TacGia where ma_tacgia = @ma)
+	begin
+		raiserror('Không tồn tại tác giả này',16,1)
+		return
+	end
+	begin tran
+		insert into TacGia values(@ma, @tentacgia, @ghichu)
+		--insert into QLTV_MAY_CHU.qltv.dbo.TacGia values(@ma, @tentacgia, @ghichu)
+	commit tran
 end
 go
 
@@ -35,21 +41,26 @@ begin
 		raiserror('Không tồn tại tác giả này',16,1)
 		return
 	end
+	begin tran
+		update TacGia
+		set ten_tacgia = @ten, ghichu = @ghichu
+		where ma_tacgia = @ma
 
-	update TacGia
-	set ten_tacgia = @ten, ghichu = @ghichu
-	where ma_tacgia = @ma
-
-	--update QLTV_MAY_CHU.qltv.dbo.TacGia
-	--set ten_tacgia = @ten, ghichu = @ghichu
-	--where ma_tacgia = @ma
-
+		--update QLTV_MAY_CHU.qltv.dbo.TacGia
+		--set ten_tacgia = @ten, ghichu = @ghichu
+		--where ma_tacgia = @ma
+	commit tran
 end
 go
 create proc sp_xoa_tacgia
 						@ma varchar(20)
 as
 begin
+	if not exists (select * from TacGia where ma_tacgia = @ma)
+	begin
+		raiserror('Không tồn tại tác giả này',16,1)
+		return
+	end
 	begin tran
 		--Delete from TacGia where ma_tacgia = @ma
 		--Delete from QLTV_MAY_CHU.qltv.dbo.TacGia where ma_tacgia = @ma

@@ -37,7 +37,7 @@ begin
 	declare @ma_nv varchar(20)
 		if (@quyen = 'admin') 
 		begin
-			set @ma_nv = @quyen + cast((select count(*) from NhanVien where quyen= @quyen  and @ma_chinhanh = ma_ChiNhanh)+ 1 as varchar(20))
+			set @ma_nv = @quyen + cast((select count(*) from NhanVien where quyen= @quyen)+ 1 as varchar(20))
 		end
 		if (@quyen = 'nhanvien')
 		begin
@@ -69,6 +69,11 @@ begin
 		if (select quyen from NhanVien
 				where ma_nhanvien in (select ORIGINAL_LOGIN())) = 'admin'
 		begin
+		if exists (select * from NhanVien where ma_nhanvien = @ma_nv)
+				begin
+					raiserror('Mã nhân viên này đã tồn tại',16,1)
+				return
+			end
 		if not exists (select * from NhanVien where @ma_nv = ma_nhanvien)
 			begin
 				raiserror ('Không tồn tại nhân viên này',16,1)

@@ -22,7 +22,7 @@ begin
 end
 
 go
-alter proc sp_add_nhanvien	
+create proc sp_add_nhanvien	
 			@quyen varchar(15),
 			@ma_chinhanh varchar(20),
 			@matkhau varchar(50),
@@ -36,7 +36,7 @@ begin
 	declare @ma_nv varchar(20)
 		if (@quyen = 'admin') 
 		begin
-			set @ma_nv = @quyen + cast((select count(*) from NhanVien where quyen= @quyen  and @ma_chinhanh = ma_ChiNhanh)+ 1 as varchar(20))
+			set @ma_nv = @quyen + cast((select count(*) from NhanVien where quyen= @quyen)+ 1 as varchar(20))
 		end
 		if (@quyen = 'nhanvien')
 		begin
@@ -66,19 +66,18 @@ create proc sp_update_nhanvien
 			@sdt varchar(50)
 as
 begin
-		if (select quyen from NhanVien
+	if (select quyen from NhanVien
 				where ma_nhanvien in (select ORIGINAL_LOGIN())) = 'admin'
 		begin
 			if exists (select * from NhanVien where ma_nhanvien = @ma_nv)
 				begin
 					raiserror('Mã nhân viên này đã tồn tại',16,1)
 				return
-		end
-		begin
-		if not exists (select * from NhanVien where @ma_nv = ma_nhanvien)
-			begin
-				raiserror ('Không tồn tại nhân viên này',16,1)
 			end
+			if not exists (select * from NhanVien where @ma_nv = ma_nhanvien)
+				begin
+					raiserror ('Không tồn tại nhân viên này',16,1)
+				end
 		--Cập nhật nếu quyền là admin
 		if (@quyen = 'admin') 
 		begin
@@ -120,7 +119,7 @@ begin
 			quyen = @quyen, ma_chinhanh = @ma_chinhanh ,matkhau = @matkhau
 			where @ma_nv = ma_nhanvien 
 		end
-		end
+	end
 		else
 		begin
 			raiserror('Bạn không thể thực hiện chức năng này',16,1)
