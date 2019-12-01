@@ -102,12 +102,12 @@ namespace csdl_pt.Pages
         private void gridLogin_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Enter)
-                _login();
+                login_to_all_sv();
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            _login();
+            login_to_all_sv();
         }
     }
 }

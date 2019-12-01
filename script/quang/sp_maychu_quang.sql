@@ -146,3 +146,17 @@ begin
 	
 end
 go
+--QTMuon
+create proc sp_get_qtMuon
+as
+begin
+	select * from QuaTrinhMuon
+end
+go
+--Muon
+create proc sp_get_dsMuon
+as
+begin
+	select * from Muon
+end
+go
