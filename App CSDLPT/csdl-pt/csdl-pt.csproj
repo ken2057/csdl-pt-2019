@@ -129,6 +129,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Report\main_report.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\showOption.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -183,6 +187,9 @@
     <Compile Include="Pages\NhanVien.xaml.cs">
       <DependentUpon>NhanVien.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Report\main_report.xaml.cs">
+      <DependentUpon>main_report.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\showOption.xaml.cs">
       <DependentUpon>showOption.xaml</DependentUpon>
     </Compile>
@@ -215,7 +222,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rp_NhanVien.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\csdl_pt.EF.NhanVien.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

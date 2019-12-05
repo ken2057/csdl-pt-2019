@@ -125,3 +125,7 @@ D:\project\csdl-pt\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.GenerateResource.
 D:\project\csdl-pt\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.csproj.CopyComplete
 D:\project\csdl-pt\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.exe
 D:\project\csdl-pt\App CSDLPT\csdl-pt\obj\Debug\csdl-pt.pdb
+D:\project\csdl-pt\App CSDLPT\csdl-pt\obj\Debug\Pages\Report\main_report.g.cs
+D:\project\csdl-pt\App CSDLPT\csdl-pt\obj\Debug\Pages\Report\main_report.baml
+D:\project\csdl-pt\App CSDLPT\csdl-pt\obj\Debug\RdlCompile.cache
+D:\project\csdl-pt\App CSDLPT\csdl-pt\obj\Debug\RdlCompile.compiled

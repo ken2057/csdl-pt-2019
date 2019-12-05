@@ -14,6 +14,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
             <ColumnDefinition Width="0.1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -41,5 +42,8 @@
         <Button Name="btnMuon" Content="L.sử mượn" FontSize="40px"
                 Click="btnMuon_Click"
             Grid.Column="3" Grid.Row="1" Margin="5px"/>
+        <Button Name="btnBaoCao" Content="Báo cáo" FontSize="40px"
+                Click="btnBaoCao_Click"
+            Grid.Column="4" Grid.Row="1" Margin="5px"/>
     </Grid>
 </Page>
