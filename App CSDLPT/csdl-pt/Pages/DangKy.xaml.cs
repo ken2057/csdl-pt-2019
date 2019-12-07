@@ -24,8 +24,10 @@ namespace csdl_pt.Pages
     {
         string connectionString;
         List<EF.DangKy> listDangKy;
+        List<EF.DocGia> listDocGia;
+        List<EF.TaiLieu> listTaiLieu;
         EF.DangKy dangKy;
-        EF.DocGia docgia;
+        EF.DocGia docGia;
 
         public DangKy(string connectionString)
         {
@@ -49,6 +51,8 @@ namespace csdl_pt.Pages
                     var rdr = command.ExecuteReader();
 
                     listDangKy = new List<EF.DangKy>();
+                    listDocGia = new List<EF.DocGia>();
+                    listTaiLieu = new List<EF.TaiLieu>();
                     while (rdr.Read())
                     {
                         listDangKy.Add(new EF.DangKy()
@@ -58,8 +62,19 @@ namespace csdl_pt.Pages
                             ma_tailieu = rdr["ma_tailieu"].ToString(),
                             ghichu = rdr["ghichu"].ToString()
                         });
+                        listDocGia.Add(new EF.DocGia()
+                        {
+                            ma_sinhvien = rdr["ma_sinhvien"].ToString(),
+                            hoten = rdr["hoten"].ToString()
+                        });
+                        listTaiLieu.Add(new EF.TaiLieu()
+                        {
+                            ma_tailieu = rdr["ma_tailieu"].ToString(),
+                            ten_tailieu = rdr["ten_tailieu"].ToString()
+                        });
                     }
-                    dtgDangKy.ItemsSource = listDangKy; // tam
+
+                    dtgDangKy.ItemsSource = listDangKy;
                     dtgDangKy.Items.Refresh();
                 }
                 catch (Exception e)
@@ -138,11 +153,13 @@ namespace csdl_pt.Pages
         private void dtgDangKy_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             dangKy = (EF.DangKy)dtgDangKy.SelectedItem;
-            txtTenDocGia.Text = dangKy.ma_sinhvien;
-            txtTenTaiLieu.Text = dangKy.ma_tailieu;
+            txtTenDocGia.Text = listDocGia.First(s => s.ma_sinhvien == dangKy.ma_sinhvien).hoten;
+            txtTenTaiLieu.Text = listTaiLieu.First(s => s.ma_tailieu == dangKy.ma_tailieu).ten_tailieu;
             txtNgayGioDK.Text = dangKy.ngaygio_dk.ToString();
             txtGhiChu.Text = dangKy.ghichu;
+
             btnXoaDK.IsEnabled = true;
+
             //đếm số lượng bản sao tài liệu nếu >0 thì btnChoMuon.IsEnable = true
         }
 

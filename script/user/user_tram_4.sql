@@ -1,4 +1,8 @@
 use master
+drop login qltv_root
+drop login qltv_duy
+drop login qltv_nghi
+drop login qltv_bui
 drop login qltv_hieu
 drop login qltv_root
 go

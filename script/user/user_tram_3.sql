@@ -1,6 +1,13 @@
 use master
-drop login qltv_bui
 drop login qltv_root
+drop login qltv_duy
+drop login qltv_nghi
+drop login qltv_bui
+<<<<<<< HEAD
+drop login qltv_root
+=======
+drop login qltv_hieu
+>>>>>>> 96ed2f599ceb308f6fd5efd65828921ba9155b1c
 go
 create login qltv_bui with password='123'
 create login qltv_root with password='123'

@@ -23,9 +23,11 @@ namespace csdl_pt.Pages
     public partial class ChiTietTaiLieu : Page
     {
         string connectionString;
-        public ChiTietTaiLieu(string connectionString)
+        TaiLieu _taiLieu;
+        public ChiTietTaiLieu(string connectionString, TaiLieu taiLieu)
         {
             InitializeComponent();
+            _taiLieu = taiLieu;
             this.connectionString = connectionString;
             show_CTTaiLieu();
         }
@@ -98,8 +100,7 @@ namespace csdl_pt.Pages
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             NavigationService navService = NavigationService.GetNavigationService(this);
-            showOption pg = new showOption(connectionString);
-            navService.Navigate(pg);
+            navService.Navigate(_taiLieu);
         }
     }
 }

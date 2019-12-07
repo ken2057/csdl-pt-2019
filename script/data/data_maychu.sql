@@ -654,27 +654,27 @@ drop login qltv_nghi
 drop login qltv_bui
 drop login qltv_hieu
 go
-create login qltv_root with password='123'
-create login qltv_duy with password='123'
-create login qltv_nghi with password='123'
-create login qltv_bui with password='123'
-create login qltv_hieu with password='123'
-go
-use qltv
-go
-create user root for login qltv_root
-create user duy for login qltv_duy
-create user nghi for login qltv_nghi
-create user bui for login qltv_bui
-create user hieu for login qltv_hieu
-go
-sp_addrolemember @rolename='db_owner', @membername='root'
-go
-sp_addrolemember @rolename='db_owner', @membername='duy'
-go
-sp_addrolemember @rolename='db_owner', @membername='nghi'
-go
-sp_addrolemember @rolename='db_owner', @membername='bui'
-go
-sp_addrolemember @rolename='db_owner', @membername='hieu'
-go
+-- create login qltv_root with password='123'
+-- create login qltv_duy with password='123'
+-- create login qltv_nghi with password='123'
+-- create login qltv_bui with password='123'
+-- create login qltv_hieu with password='123'
+-- go
+-- use qltv
+-- go
+-- create user root for login qltv_root
+-- create user duy for login qltv_duy
+-- create user nghi for login qltv_nghi
+-- create user bui for login qltv_bui
+-- create user hieu for login qltv_hieu
+-- go
+-- sp_addrolemember @rolename='db_owner', @membername='root'
+-- go
+-- sp_addrolemember @rolename='db_owner', @membername='duy'
+-- go
+-- sp_addrolemember @rolename='db_owner', @membername='nghi'
+-- go
+-- sp_addrolemember @rolename='db_owner', @membername='bui'
+-- go
+-- sp_addrolemember @rolename='db_owner', @membername='hieu'
+-- go

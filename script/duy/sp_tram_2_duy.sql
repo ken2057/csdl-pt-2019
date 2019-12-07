@@ -76,3 +76,25 @@ begin
 	delete QLTV_TRAM_4.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
 end
 go
+create proc sp_get_ThongTin_TaiLieu
+as
+begin
+	select TL2.ma_tailieu, ten_tailieu, ten_loai, tinhtrang, gia, ngonngu
+	from (select ma_tailieu, ma_loai, ngonngu, ten_tailieu from TaiLieu) TL2,
+		(select ma_tailieu, gia from QLTV_TRAM_3.qltv.dbo.TaiLieu) TL3, 
+		(select ma_tailieu, tinhtrang from QLTV_TRAM_4.qltv.dbo.TaiLieu) TL4, 
+			LoaiTaiLieu L
+	where TL2.ma_loai = L.ma_loai
+		and TL2.ma_tailieu in (select ma_tailieu from BanSao)
+		and TL2.ma_tailieu = TL3.ma_tailieu
+		and TL2.ma_tailieu = TL4.ma_tailieu
+end
+go
+create proc sp_get_bansao_sl
+as
+begin
+	select distinct ma_tailieu, count(tinhtrang) as sl
+	from BanSao
+	group by ma_tailieu
+end
+go

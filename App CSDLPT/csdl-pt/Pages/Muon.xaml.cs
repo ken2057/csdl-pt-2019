@@ -50,7 +50,7 @@ namespace csdl_pt.Pages
             qtmuon = (obj as EF.QuaTrinhMuon).ngay_tra.ToString();
             qtmuon = (obj as EF.QuaTrinhMuon).ngay_muon.ToString();
             qtmuon = (obj as EF.QuaTrinhMuon).ngay_hethan.ToString();
-            qtmuon = (obj as EF.QuaTrinhMuon).ngayGio_muon.ToString();
+            //qtmuon = (obj as EF.QuaTrinhMuon).ngayGio_muon.ToString();
             qtmuon = (obj as EF.QuaTrinhMuon).tien_datcoc.ToString();
             qtmuon = (obj as EF.QuaTrinhMuon).tien_muon.ToString();
             qtmuon = (obj as EF.QuaTrinhMuon).tien_datcoc.ToString();
@@ -67,15 +67,15 @@ namespace csdl_pt.Pages
         private void BtnUpdateMuon_Click(object sender, RoutedEventArgs e)
         {
             NavigationService navService = NavigationService.GetNavigationService(this);
-            UpdateQuaTrinhMuon pg = new UpdateQuaTrinhMuon(connectionString);
-            navService.Navigate(pg);
+           // UpdateQuaTrinhMuon pg = new UpdateQuaTrinhMuon(connectionString);
+           // navService.Navigate(pg);
         }
 
         private void BtnMuon_Click(object sender, RoutedEventArgs e)
         {
             NavigationService navService = NavigationService.GetNavigationService(this);
-            Borrow pg = new Borrow(connectionString);
-            navService.Navigate(pg);
+            // Borrow pg = new Borrow(connectionString);
+            // navService.Navigate(pg);
         }
 
         private void btnDangKy_Click(object sender, RoutedEventArgs e)
@@ -112,7 +112,7 @@ namespace csdl_pt.Pages
                             ma_sinhvien = rdr["ma_sinhvien"].ToString(),
                             ma_nhanvien_dua = rdr["ma_nhanvien_dua"].ToString(),
                             ma_nhanvien_nhan = rdr["ma_nhanvien_nhan"].ToString(),
-                            ngayGio_muon = DateTime.Parse(rdr["ngayGio_muon"].ToString()),
+                            //ngayGio_muon = DateTime.Parse(rdr["ngayGio_muon"].ToString()),
                             ngay_hethan = DateTime.Parse(rdr["ngay_hethan"].ToString()),
                             ngay_muon = DateTime.Parse(rdr["ngay_muon"].ToString()),
                             ngay_tra = DateTime.Parse(rdr["ngay_tra"].ToString()),

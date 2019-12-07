@@ -45,5 +45,8 @@
         <Button Name="btnBaoCao" Content="Báo cáo" FontSize="40px"
                 Click="btnBaoCao_Click"
             Grid.Column="4" Grid.Row="1" Margin="5px"/>
+        <Button Name="btnDangXuat" Content="Đăng xuất" FontSize="40px"
+                Click="btnDangXuat_Click"
+            Grid.Column="4" Grid.Row="2" Margin="5px"/>
     </Grid>
 </Page>
