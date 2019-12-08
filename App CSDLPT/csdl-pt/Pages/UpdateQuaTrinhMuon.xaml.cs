@@ -44,7 +44,7 @@ namespace csdl_pt.Pages
             txtTienDaTra.Text = qtm.tien_datra.ToString();
             txtTienCoc.Text = qtm.tien_datcoc.ToString();
             txtTienMuon.Text = qtm.tien_muon.ToString();
-            dpNgayGioMuon.SelectedDate = qtm.ngayGio_muon;
+            //dpNgayGioMuon.SelectedDate = qtm.ngayGio_muon;
             dpNgayHetHan.SelectedDate = qtm.ngay_hethan;
             dpNgayMuon.SelectedDate = qtm.ngay_muon;
             txtGhiChu.Text = qtm.ghichu;

@@ -62,18 +62,17 @@ Create table [QuaTrinhMuon]
 (
 	[ma_tailieu] Varchar(20) NOT NULL,
 	[ma_bansao] Varchar(20) NOT NULL,
-	[ngayGio_muon] Datetime NOT NULL,
 	[ma_nhanvien_dua] Varchar(20) NOT NULL,
 	[ma_nhanvien_nhan] Varchar(20) NOT NULL,
 	[ma_sinhvien] Varchar(20) NOT NULL,
 	[ngay_hethan] Datetime NULL,
 	[ngay_tra] Datetime NULL,
-	[ngay_muon] Datetime NULL,
+	[ngay_muon] Datetime not NULL,
 	[tien_muon] Money NULL,
 	[tien_datra] Money NULL,
 	[tien_datcoc] Money NULL,
 	[ghichu] Ntext NULL,
-Primary Key ([ma_tailieu],[ma_bansao],[ngayGio_muon])
+Primary Key ([ma_tailieu],[ma_bansao],[ngay_muon] )
 ) 
 go
 

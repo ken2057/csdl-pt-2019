@@ -78,3 +78,58 @@ begin
 	delete QLTV_TRAM_4.qltv.dbo.LoaiTaiLieu where ma_loai = @ma_loai
 end
 go
+create proc sp_get_dsNhanVien_tram
+as
+begin
+	select ma_nhanvien, quyen, CN.diachi, sdt
+	from NhanVien NV, ChiNhanh CN
+	where NV.ma_ChiNhanh = CN.ma_ChiNhanh 
+end
+go
+create proc sp_get_ThongTin_TaiLieu
+as
+begin
+	select ma_tailieu, ten_tailieu, ten_loai, tinhtrang, gia, ngonngu
+	from (select ma_tailieu, ma_loai, ngonngu, tinhtrang, gia, ten_tailieu from TaiLieu) TL, 
+			LoaiTaiLieu L
+	where TL.ma_loai = L.ma_loai
+		and TL.ma_tailieu in (select ma_tailieu from BanSao)
+end
+go
+create proc sp_get_bansao_sl
+as
+begin
+	select distinct ma_tailieu, count(tinhtrang) as sl
+	from BanSao
+	group by ma_tailieu
+end
+go
+create proc sp_get_lsMuon_taiLieu
+	@maTaiLieu varchar(20),
+	@maNV varchar(20),
+	@ma_sinhvien varchar(20),
+	@treHan varchar(10)
+as
+begin
+	if @treHan = 'tre'
+		select ma_tailieu, ma_bansao, ngay_hethan, ngay_muon, ngay_tra, ma_sinhvien, ma_nhanvien_dua, ma_nhanvien_nhan
+		from QuaTrinhMuon
+		where ma_tailieu like '%'+@maTaiLieu+'%'
+			and (ma_nhanvien_dua like '%'+@maNV+'%' or ma_nhanvien_nhan like '%'+@maNV+'%')
+			and ma_sinhvien like '%'+@ma_sinhvien+'%'
+			and ngay_tra > ngay_hethan
+	else if @treHan = 'khong tre'
+		select ma_tailieu, ma_bansao, ngay_hethan, ngay_muon, ngay_tra, ma_sinhvien, ma_nhanvien_dua, ma_nhanvien_nhan
+		from QuaTrinhMuon
+		where ma_tailieu like '%'+@maTaiLieu+'%'
+			and (ma_nhanvien_dua like '%'+@maNV+'%' or ma_nhanvien_nhan like '%'+@maNV+'%')
+			and ma_sinhvien like '%'+@ma_sinhvien+'%'
+			and ngay_tra <= ngay_hethan
+	else
+		select ma_tailieu, ma_bansao, ngay_hethan, ngay_muon, ngay_tra, ma_sinhvien, ma_nhanvien_dua, ma_nhanvien_nhan
+		from QuaTrinhMuon
+		where ma_tailieu like '%'+@maTaiLieu+'%'
+			and (ma_nhanvien_dua like '%'+@maNV+'%' or ma_nhanvien_nhan like '%'+@maNV+'%')
+			and ma_sinhvien like '%'+@ma_sinhvien+'%'
+end
+go

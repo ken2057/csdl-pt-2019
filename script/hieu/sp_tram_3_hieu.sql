@@ -57,7 +57,7 @@ begin
 			raiserror('Bạn không thể thực hiện chức năng này',16,1)
 		end
 end
-
+go
 create proc sp_update_nhanvien
 			@ma_nv varchar(20),
 			@quyen varchar(15),

@@ -1,0 +1,37 @@
+﻿<Page x:Class="csdl_pt.Pages.Report.main_report"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:csdl_pt.Pages.Report"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="main_report">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Name="dtgRPOptions" 
+                  FontSize="20"
+                  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" 
+                  AutoGenerateColumns="False" CanUserAddRows="False"
+                  MouseDoubleClick="dtgRPOptions_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="1*" Header="Loại báo cáo" Binding="{Binding Name}"  IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!--<Button Grid.Column="1" Grid.Row="1" Content="rp nv" Name="btnRPNV" Click="btnRPNV_Click"/>-->
+        <Button Grid.Column="0" Grid.Row="2" Content="Back" Name="btnBack" Click="btnBack_Click"/>
+    </Grid>
+</Page>

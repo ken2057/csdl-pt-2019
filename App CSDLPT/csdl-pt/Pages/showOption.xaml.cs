@@ -69,5 +69,19 @@ namespace csdl_pt.Pages
             TacGia pg = new TacGia(connectionString);
             navService.Navigate(pg);
         }
+
+        private void btnBaoCao_Click(object sender, RoutedEventArgs e)
+        {
+            navService = NavigationService.GetNavigationService(this);
+            Report.main_report pg = new Report.main_report(connectionString);
+            navService.Navigate(pg);
+        }
+
+        private void btnDangXuat_Click(object sender, RoutedEventArgs e)
+        {
+            navService = NavigationService.GetNavigationService(this);
+            login pg = new login();
+            navService.Navigate(pg);
+        }
     }
 }

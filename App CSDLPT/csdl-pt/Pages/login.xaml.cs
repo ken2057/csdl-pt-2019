@@ -30,7 +30,7 @@ namespace csdl_pt.Pages
 
         private void _login()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["qltv"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["qltv2"].ConnectionString;
             connectionString += "User ID=" + txtUsername.Text + "; Password=" + txtPassword.Password;
 
             using (var conn = new SqlConnection(connectionString))
@@ -76,11 +76,24 @@ namespace csdl_pt.Pages
                     try
                     {
                         conn.Open();
+
                         // open if login success
-                        NavigationService navService = NavigationService.GetNavigationService(this);
-                        showOption sO = new showOption(connectionString);
-                        navService.Navigate(sO);
+                        // when is a root user (admin of main server)
+                        if (listCS.IndexOf(cS) == 0)
+                        {
+                            NavigationService navService = NavigationService.GetNavigationService(this);
+                            loginOption sO = new loginOption(listCS);
+                            navService.Navigate(sO);
+                        }
+                        else
+                        {
+                            NavigationService navService = NavigationService.GetNavigationService(this);
+                            showOption sO = new showOption(connectionString);
+                            navService.Navigate(sO);
+                        }
+
                         isLogin = true;
+
                         break;
                     }
                     catch (Exception)
@@ -102,12 +115,14 @@ namespace csdl_pt.Pages
         private void gridLogin_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Enter)
-                login_to_all_sv();
+                //login_to_all_sv();
+            _login();
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            login_to_all_sv();
+            //login_to_all_sv();
+            _login();
         }
     }
 }
