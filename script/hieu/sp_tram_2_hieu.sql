@@ -13,7 +13,7 @@ begin
 	select quyen from Quyen 
 	where quyen = 'nhanvien' and quyen='thuthu'
 end
-
+go
 create proc sp_get_chinhanh
 as
 begin

@@ -13,10 +13,18 @@ create proc sp_add_tacgia
 as
 begin
 	declare @ma varchar(20)
-	set @ma = (select count(*) from TacGia) + 1 + ''
-	if not exists (select * from TacGia where ma_tacgia = @ma)
+	--set @ma = (select count(*) from TacGia) + 1 + ''
+	declare @stt int
+	set @stt = 1
+	set @ma = @stt + ''
+	while exists(select * from TacGia where ma_tacgia = @ma)
 	begin
-		raiserror('Không tồn tại tác giả này',16,1)
+		set @stt = @stt + 1
+		set @ma = @stt + ''
+	end
+	if exists (select * from TacGia where ma_tacgia = @ma)
+	begin
+		raiserror('Tác giả này đã tồn tại',16,1)
 		return
 	end
 	
