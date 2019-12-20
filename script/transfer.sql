@@ -37,17 +37,10 @@ insert into QLTV_Tram_3.qltv.dbo.LoaiTaiLieu select * from LoaiTaiLieu
 insert into QLTV_Tram_4.qltv.dbo.LoaiTaiLieu select * from LoaiTaiLieu
 go
 -- Insert NhanVien
-<<<<<<< HEAD
 insert into QLTV_Tram_1.qltv.dbo.NhanVien select * from NhanVien where ma_chinhanh = 'SVH' or quyen = 'root'
 insert into QLTV_Tram_2.qltv.dbo.NhanVien select * from NhanVien where ma_chinhanh = 'HM' or quyen = 'root'
 insert into QLTV_Tram_3.qltv.dbo.NhanVien select * from NhanVien where ma_chinhanh = 'TS' or quyen = 'root'
 insert into QLTV_Tram_3.qltv.dbo.NhanVien select * from NhanVien where ma_chinhanh = 'CT' or quyen = 'root'
-=======
-insert into QLTV_Tram_1.qltv.dbo.NhanVien select * from NhanVien where ma_chinhanh = 'SVH'
-insert into QLTV_Tram_2.qltv.dbo.NhanVien select * from NhanVien where ma_chinhanh = 'HM'
-insert into QLTV_Tram_3.qltv.dbo.NhanVien select * from NhanVien where ma_chinhanh = 'TS'
-insert into QLTV_Tram_4.qltv.dbo.NhanVien select * from NhanVien where ma_chinhanh = 'CT'
->>>>>>> 96ed2f599ceb308f6fd5efd65828921ba9155b1c
 go
 -- Insert TaiLieu
 insert into QLTV_Tram_1.qltv.dbo.TaiLieu select ma_tailieu, ma_tacgia_1, ma_tacgia_2, ma_tacgia_3 from TaiLieu
@@ -59,10 +52,5 @@ go
 insert into QLTV_Tram_1.qltv.dbo.BanSao select * from BanSao where ma_chinhanh = 'SVH'
 insert into QLTV_Tram_2.qltv.dbo.BanSao select * from BanSao where ma_chinhanh = 'HM'
 insert into QLTV_Tram_3.qltv.dbo.BanSao select * from BanSao where ma_chinhanh = 'TS'
-<<<<<<< HEAD
-insert into QLTV_Tram_3.qltv.dbo.BanSao select * from BanSao where ma_chinhanh = 'CT'
-go
-=======
 insert into QLTV_Tram_4.qltv.dbo.BanSao select * from BanSao where ma_chinhanh = 'CT'
 go
->>>>>>> 96ed2f599ceb308f6fd5efd65828921ba9155b1c
