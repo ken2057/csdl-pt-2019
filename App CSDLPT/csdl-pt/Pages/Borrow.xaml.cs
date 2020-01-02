@@ -114,6 +114,36 @@ namespace csdl_pt.Pages
 
         private void BtnDelete_Muon_Click(object sender, RoutedEventArgs e)
         {
+            var obj = dtgBorrow.SelectedItem;
+            using (var conn = new SqlConnection(connectionString))
+            using (var command = new SqlCommand("sp_delete_Muon", conn)
+            {
+                CommandType = CommandType.StoredProcedure
+            })
+            {
+                try
+                {
+                    conn.Open();
+                    // Add params nếu có
+                    command.Parameters.AddWithValue("@ma_tailieu", dsMuon = (obj as EF.Muon).ma_tailieu);
+                    command.Parameters.AddWithValue("@ma_bansao", dsMuon = (obj as EF.Muon).ma_bansao);
+                    command.Parameters.AddWithValue("@ma_sinhvien", dsMuon = (obj as EF.Muon).ma_sinhvien);
+
+                    var rdr = command.ExecuteNonQuery(); // Sử dụng khi không trả về dữ liệu
+                    //var rdr = command.ExecuteReader(); // Sử dụng khi có trả về dữ liệu
+
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+               
+            }
         }
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
