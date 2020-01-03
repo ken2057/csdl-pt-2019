@@ -15,5 +15,6 @@ create user hieu for login qltv_hieu
 create user root for login qltv_root
 go
 sp_addrolemember @rolename='db_owner', @membername='hieu'
+go
 sp_addrolemember @rolename='db_owner', @membername='root'
 go

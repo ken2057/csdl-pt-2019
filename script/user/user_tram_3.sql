@@ -14,5 +14,6 @@ create user bui for login qltv_bui
 create user root for login qltv_root
 go
 sp_addrolemember @rolename='db_owner', @membername='bui'
+go
 sp_addrolemember @rolename='db_owner', @membername='root'
 go

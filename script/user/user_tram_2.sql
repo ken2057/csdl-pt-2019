@@ -14,5 +14,6 @@ create user nghi for login qltv_nghi
 create user root for login qltv_root
 go
 sp_addrolemember @rolename='db_owner', @membername='nghi'
+go
 sp_addrolemember @rolename='db_owner', @membername='root'
 go
