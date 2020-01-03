@@ -34,7 +34,7 @@
         <Label Grid.Row="2" Grid.Column="3" Content="Mã độc giả" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
         <ComboBox Name="cbMaDocGia" Grid.Row="2" Grid.Column="4" Margin="10px" VerticalAlignment="Center"/>
         <Label Grid.Row="3" Grid.Column="1" Content="Ngày mượn" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
-        <DatePicker Name="dpNgayMuon" Grid.Row="3" Grid.Column="2" Margin="10px" VerticalAlignment="Center"/>
+        <DatePicker Name="dpNgayMuon" Grid.Row="3" Grid.Column="2" Margin="10px" VerticalAlignment="Center" IsEnabled="False"/>
         <Label Grid.Row="3" Grid.Column="3" Content="Tiền dặt cọc" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
         <TextBox Name="txtTienDatCoc" Grid.Row="3" Grid.Column="4" Margin="10px" VerticalAlignment="Center"/>
         <Button Name="btnAdd" Content="Add" Grid.Column="4" Grid.Row="5" Margin="5" Click="BtnAdd_Click"></Button>

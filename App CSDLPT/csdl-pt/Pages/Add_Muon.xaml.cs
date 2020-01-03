@@ -60,7 +60,6 @@ namespace csdl_pt.Pages
                     command.Parameters.AddWithValue("@ma_bansao", cbMaBanSao.Text);
                     command.Parameters.AddWithValue("@ma_nhanvien_dua", cbMaNhanVienDua.Text);
                     command.Parameters.AddWithValue("@ma_sinhvien", cbMaDocGia.Text);
-                    command.Parameters.AddWithValue("@ngay_muon", dpNgayMuon.SelectedDate);
                     command.Parameters.AddWithValue("@tien_datcoc", txtTienDatCoc.Text);
 
                     var rdr = command.ExecuteNonQuery(); // Sử dụng khi không trả về dữ liệu

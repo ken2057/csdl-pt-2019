@@ -22,8 +22,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition/> 
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -39,7 +38,6 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Width="100*" Header="Mã tài liệu" Binding="{Binding ma_tailieu}" IsReadOnly="True"/>
                 <DataGridTextColumn Width="100*" Header="Mã bản sao" Binding="{Binding mabansao}" IsReadOnly="True"/>
-                <DataGridTextColumn Width="100*" Header="Ngày giờ mượn" Binding="{Binding ngayGio_muon}" IsReadOnly="True"/>
                 <DataGridTextColumn Width="100*" Header="Mã nhân viên giao" Binding="{Binding ma_nhanvien_dua}" IsReadOnly="True"/>
                 <DataGridTextColumn Width="100*" Header="Mã nhân viên nhận" Binding="{Binding ma_nhanvien_nhan}" IsReadOnly="True"/>
                 <DataGridTextColumn Width="100*" Header="Mã độc giả" Binding="{Binding ma_sinhvien}" IsReadOnly="True"/>
