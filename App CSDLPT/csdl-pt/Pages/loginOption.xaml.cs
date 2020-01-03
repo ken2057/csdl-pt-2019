@@ -21,10 +21,12 @@ namespace csdl_pt.Pages
     public partial class loginOption : Page
     {
         List<string> listCS;
-        public loginOption(List<string> listCS)
+string connectionString;
+        public loginOption(List<string> listCS, string connectionString)
         {
             InitializeComponent();
             this.listCS = listCS;
+this.connectionString = connectionString;
         }
 
         private void btnThoat_Click(object sender, RoutedEventArgs e)

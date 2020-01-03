@@ -61,16 +61,17 @@ namespace csdl_pt.Pages
             List<string> listCS = new List<string>();
 
             // get all connecitonString exist
-            listCS.Add(ConfigurationManager.ConnectionStrings["qltv_maychu"].ConnectionString);
-            listCS.Add(ConfigurationManager.ConnectionStrings["qltv_tram_1"].ConnectionString);
-            listCS.Add(ConfigurationManager.ConnectionStrings["qltv_tram_2"].ConnectionString);
-            listCS.Add(ConfigurationManager.ConnectionStrings["qltv_tram_3"].ConnectionString);
-            listCS.Add(ConfigurationManager.ConnectionStrings["qltv_tram_4"].ConnectionString);
+            listCS.Add(ConfigurationManager.ConnectionStrings["qltv_maychu"].ConnectionString + "User ID=" + txtUsername.Text + "; Password=" + txtPassword.Password);
+            listCS.Add(ConfigurationManager.ConnectionStrings["qltv_tram_1"].ConnectionString + "User ID=" + txtUsername.Text + "; Password=" + txtPassword.Password);
+            listCS.Add(ConfigurationManager.ConnectionStrings["qltv_tram_2"].ConnectionString + "User ID=" + txtUsername.Text + "; Password=" + txtPassword.Password);
+            listCS.Add(ConfigurationManager.ConnectionStrings["qltv_tram_3"].ConnectionString + "User ID=" + txtUsername.Text + "; Password=" + txtPassword.Password);
+            listCS.Add(ConfigurationManager.ConnectionStrings["qltv_tram_4"].ConnectionString + "User ID=" + txtUsername.Text + "; Password=" + txtPassword.Password);
 
             // try login each of them
             foreach (var cS in listCS)
             {
-                string connectionString = cS + "User ID=" + txtUsername.Text + "; Password=" + txtPassword.Password;
+                string connectionString = cS ;
+//+ "User ID=" + txtUsername.Text + "; Password=" + txtPassword.Password;
                 using (var conn = new SqlConnection(connectionString))
                 {
                     try
@@ -79,10 +80,11 @@ namespace csdl_pt.Pages
 
                         // open if login success
                         // when is a root user (admin of main server)
+
                         if (listCS.IndexOf(cS) == 0)
                         {
                             NavigationService navService = NavigationService.GetNavigationService(this);
-                            loginOption sO = new loginOption(listCS);
+                            loginOption sO = new loginOption(listCS, connectionString);
                             navService.Navigate(sO);
                         }
                         else
@@ -96,9 +98,9 @@ namespace csdl_pt.Pages
 
                         break;
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        //MessageBox.Show(exception.ToString());
+                        //MessageBox.Show(ex.ToString());
                     }
                     finally
                     {
@@ -115,14 +117,14 @@ namespace csdl_pt.Pages
         private void gridLogin_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Enter)
-                //login_to_all_sv();
-            _login();
+                login_to_all_sv();
+            //_login();
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            //login_to_all_sv();
-            _login();
+            login_to_all_sv();
+            //_login();
         }
     }
 }

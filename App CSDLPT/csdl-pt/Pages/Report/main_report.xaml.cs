@@ -27,6 +27,7 @@ namespace csdl_pt.Pages.Report
         public main_report(string connectionString)
         {
             InitializeComponent();
+//	    MessageBox.Show(connectionString);
             this.connectionString = connectionString;
 
             addReportsIntoDataGrid();
